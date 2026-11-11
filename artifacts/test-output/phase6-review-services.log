@@ -1,0 +1,5 @@
+NAME                       IMAGE                     COMMAND                  SERVICE   CREATED         STATUS                        PORTS
+soup-review-phase6-api-1   soup-review-phase6-api    "sh -c 'alembic upgr…"   api       4 minutes ago   Up About a minute (healthy)   127.0.0.1:8000->8000/tcp
+soup-review-phase6-db-1    postgres:17.11-bookworm   "docker-entrypoint.s…"   db        4 minutes ago   Up About a minute (healthy)   127.0.0.1:54329->5432/tcp
+soup-review-phase6-web-1   soup-review-phase6-web    "docker-entrypoint.s…"   web       4 minutes ago   Up 4 minutes (healthy)        127.0.0.1:3000->3000/tcp
+EXIT_CODE=0

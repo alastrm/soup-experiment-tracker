@@ -1,0 +1,20 @@
+
+batch_id           : 18b92225-f9ef-44d0-a14d-331f5d936edc
+accepted           : {@{event_id=1cb91b38-4d19-45c1-bc6f-f41aeff130bf; seq=1}}
+inserted_count     : 1
+deduplicated_count : 0
+committed_seq      : 1
+
+batch_id           : 18b92225-f9ef-44d0-a14d-331f5d936edc
+accepted           : {@{event_id=1cb91b38-4d19-45c1-bc6f-f41aeff130bf; seq=1}}
+inserted_count     : 1
+deduplicated_count : 0
+committed_seq      : 1
+
+run         : @{id=0f321062-7f39-41c7-b270-f4fb7c5f14e5; name=Example run; created_at=11.11.2026 17:56:38}
+last_seq    : 1
+event_count : 1
+metrics     : {@{event_id=1cb91b38-4d19-45c1-bc6f-f41aeff130bf; metric=loss; step=1; value=0,5; occurred_at=01.01.2026 
+              00:00:00; seq=1}}
+
+EXIT_CODE=0

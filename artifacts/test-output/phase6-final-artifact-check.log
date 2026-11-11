@@ -1,0 +1,9 @@
+output/pdf/Soup-Submission-Note.pdf pages 2 source_blocks 21 missing_blocks [] sha256 ba45070c31495f5d40b3064fcfa5edbedb7a9746271f87079486a5f1651e8fe2
+output/pdf/Soup-Architecture.pdf pages 1 source_blocks 8 missing_blocks [] sha256 9a70f5b7353c1d8972cb7a149ad7e7571036bf68ea18a390425f0eb04a5afc74
+FIRST_PERSON_AI_DISCLOSURE_WORDS 85
+KNOWN_MISSING_HISTORICAL_LINKS [('EVIDENCE.md', '../artifacts/test-output/phase2-compile.log'), ('EVIDENCE.md', '../artifacts/test-output/phase2-compose-config.log')]
+HISTORICAL_CAPTURE_FILES_CHECKED 172 BYTE_CHANGES []
+PRODUCT_CHANGES_VS_MEASURED_PHASE5 []
+REQUIRED_FINAL_RUN_CAPTURES_PRESENT_WITH_RECORDED_EXIT0
+FINAL_ARTIFACT_CHECK_PASS; historical gaps and runtime limits remain explicitly qualified
+EXIT_CODE=0

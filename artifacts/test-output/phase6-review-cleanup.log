@@ -1,0 +1,17 @@
+ Container soup-review-phase6-web-1  Stopping
+ Container soup-review-phase6-web-1  Stopped
+ Container soup-review-phase6-web-1  Removing
+ Container soup-review-phase6-web-1  Removed
+ Container soup-review-phase6-api-1  Stopping
+ Container soup-review-phase6-api-1  Stopped
+ Container soup-review-phase6-api-1  Removing
+ Container soup-review-phase6-api-1  Removed
+ Container soup-review-phase6-db-1  Stopping
+ Container soup-review-phase6-db-1  Stopped
+ Container soup-review-phase6-db-1  Removing
+ Container soup-review-phase6-db-1  Removed
+ Network soup-review-phase6_default  Removing
+ Volume soup-review-phase6_postgres_data  Removing
+ Volume soup-review-phase6_postgres_data  Removed
+ Network soup-review-phase6_default  Removed
+EXIT_CODE=0

@@ -1,0 +1,16 @@
+ version_num 
+-------------
+ 0001
+(1 row)
+
+ fresh_projects 
+----------------
+              0
+(1 row)
+
+ fresh_events 
+--------------
+            0
+(1 row)
+
+EXIT_CODE=0

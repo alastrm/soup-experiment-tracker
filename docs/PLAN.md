@@ -9,7 +9,7 @@
 | 3. Durable SSE + Next.js (user-authorized scope) | Authenticated replay/revocation, dark run list/detail/charts, focused PostgreSQL/Chromium proofs | COMPLETE - see Phase 3 evidence; no load/final report |
 | 4. Adversarial reliability/security | PostgreSQL/transport faults, mid-frame browser recovery, isolation/log/timing probes; confirmed fixes only | COMPLETE - Linux58; Windows56+2 targeted; browser9; client5. See evidence/remaining limits |
 | 5. Evaluation | Measured 50 x10/s load and evidence-based SHIP/DON'T SHIP verdict | COMPLETE - 498.92 events/s baseline; 498.17 with50 SSE; all35,000 aggregate events per workload audited; scoped SHIP with declared1% tolerance. Regression58/9/5 pass; see EVIDENCE |
-| 6. Final delivery | <=2-page note, surprise/concern paragraph, AI disclosure and reproducible handoff | IN PROGRESS - note/audit/test instructions prepared; clean-clone/final verification pending |
+| 6. Final delivery | <=2-page note, surprise/concern paragraph, AI disclosure and reproducible handoff | COMPLETE PREPARATION - clean local clone/no-cache build/fresh migrations; backend58, browser9, client5, TypeScript/build/smoke pass; note2 pages, architecture1. Human review/publication/email remain applicant actions |
 
 User prompts override the original roadmap: ingestion in Phase2, SSE/frontend in Phase3, adversarial verification in Phase4, measured evaluation in Phase5 and final submission preparation in Phase6. The employer cancelled the live discussion. No feature expansion, push or email sending; stop after final preparation.
 

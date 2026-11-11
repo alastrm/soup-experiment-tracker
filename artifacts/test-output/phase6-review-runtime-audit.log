@@ -1,0 +1,3 @@
+COMMAND docker compose logs --no-color api web db; isolated review project
+EXIT_CODE 0 BYTES 9954 TOKEN_MATCHES 0
+EXIT_CODE=0

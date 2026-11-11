@@ -1,0 +1,2 @@
+service "api" is not running
+EXIT_CODE=1

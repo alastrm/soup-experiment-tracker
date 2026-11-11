@@ -1,0 +1,35 @@
+{
+  "files": 299,
+  "bytes": 56539131,
+  "excluded_path_violations": [],
+  "secret_pattern_locations_only": [],
+  "largest_files": [
+    {
+      "path": "artifacts/test-output/phase5-baseline-01/manifest.json",
+      "bytes": 10298711,
+      "sha256": "cb9d753cc1952d647e7abf40f3515fd593e0f761947d32f9e4f87d2a7d6a3426"
+    },
+    {
+      "path": "artifacts/test-output/phase5-baseline-02/manifest.json",
+      "bytes": 10298711,
+      "sha256": "ff49c40545e271e77b0c862da2ef19743cadfdc72554ebda9d5371c82ddef571"
+    },
+    {
+      "path": "artifacts/test-output/phase5-sse-01/manifest.json",
+      "bytes": 10298711,
+      "sha256": "38ba747eecd8e2dd016c00e442a4129e40b6ceef0a00cca00d5da63c5322dbe9"
+    },
+    {
+      "path": "artifacts/test-output/phase5-sse-01/requests.jsonl",
+      "bytes": 5940015,
+      "sha256": "b5a5ef1b736fbd8f99efcd9052f2df928d7e385f4f7fb08106a6953dfcd2d704"
+    },
+    {
+      "path": "artifacts/test-output/phase5-baseline-02/requests.jsonl",
+      "bytes": 5939519,
+      "sha256": "9ad8b41ffab24ccf7c8fc661af8d2a58a78bbf09fbd8bff85f553fdbe0881d72"
+    }
+  ]
+}
+INTENDED_FILE_SCAN_PASS; heuristic patterns are not an exhaustive secret audit
+EXIT_CODE=0

@@ -1,6 +1,6 @@
-# Verification matrix - evidence as of Phase 5
+# Verification matrix - final submission preparation
 
-Statuses describe the executed local scope, not universal security/correctness. Raw commands/results/failures and exact test names are in [EVIDENCE.md](EVIDENCE.md). Phase5 regression: Linux58, Chromium9, client5 pass. Local load verdict is scoped to the measured workload/environment and declared1% tolerance, not production readiness.
+Statuses describe the executed local scope, not universal security/correctness. Raw commands/results/failures and exact test names are in [EVIDENCE.md](EVIDENCE.md). Final Phase6 clean-clone verification: Linux58, Chromium9, client5 pass; TypeScript/production build/migrations/live smoke pass. [SUBMISSION_AUDIT.md](SUBMISSION_AUDIT.md) classifies every original/follow-up requirement. Local load verdict uses Phase5 measurements and a self-defined1% tolerance, not Soup's criterion or production readiness; exact500/s was not achieved.
 
 | ID | Required scenario | Automated evidence | Status / limit |
 | --- | --- | --- | --- |
@@ -38,4 +38,4 @@ Statuses describe the executed local scope, not universal security/correctness. 
 - Generic foreign/missing responses match; local timing samples are not a proof of constant time. Operator-accessible PostgreSQL logs can contain SQL/identifiers/metric metadata. Shared load, bootstrap abuse, connection DoS and access to operator logs are not solved by API-key scoping.
 - Chromium is the exercised browser. Infinite retry/parser schedules, other browsers, external proxies/CDNs and malicious-server responses are not exhaustively verified.
 - Phase5 is two70s workloads, not a soak/capacity-ceiling test. API CPU/pool pressure increases with SSE; no claim of proven server saturation point or production headroom. Python SSE consumers do not measure50 browser renderers; Chromium regression separately checks the actual UI. Long-history bootstrap, WAN/TLS/proxies, disk faults and prolonged memory growth remain unverified at load.
-- Demo metrics remain explicitly generated samples. The original PDF requires consistency/isolation/failure evidence, not real ML training. The <=2-page note/surprise paragraph and final submission remain later deliverables.
+- Demo metrics remain explicitly generated samples. The original PDF requires consistency/isolation/failure evidence, not real ML training. The2-page note, applicant-supplied reflection,1-page architecture, AI disclosure, audit and unsent email draft are prepared. Employer follow-up cancels the live discussion. Applicant review/publication/delivery remain personal actions; two missing Phase2 raw files are not reconstructed.

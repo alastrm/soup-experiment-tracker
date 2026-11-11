@@ -1,0 +1,8 @@
+{"command": ["node", "--version"], "exit_code": 0, "stdout": "v22.20.0\n", "stderr": ""}
+{"command": ["npm.cmd", "--version"], "exit_code": 0, "stdout": "10.9.3\n", "stderr": ""}
+{"command": ["docker", "version", "--format", "{{.Server.Version}}"], "exit_code": 0, "stdout": "29.1.3\n", "stderr": ""}
+{"command": ["docker", "compose", "version"], "exit_code": 0, "stdout": "Docker Compose version v2.40.3-desktop.1\n", "stderr": ""}
+PYTHON 3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]
+submission_note bytes 7639 sha256 82126a17f9c191af63c7fdf584b94791732a891d42aa346b8fbd74f664a7f8df
+architecture bytes 4481 sha256 80e20629c311b6685fa1774b72816d9c5fe0359a20f4bfe3a7c9993a596e1681
+EXIT_CODE=0
