@@ -1,0 +1,3 @@
+output\pdf\Soup-Submission-Note.pdf: pages=2, words=974
+NOTE_PAGE_COUNT=2; manual check and scope distinctions present
+EXIT_CODE=0

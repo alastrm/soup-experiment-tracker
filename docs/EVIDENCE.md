@@ -454,3 +454,18 @@ All technical limits from Phases4/5 remain: exact500/s/production capacity, long
 Final [artifact check source](../artifacts/test-output/phase6-final-artifact-check.py) and [actual output](../artifacts/test-output/phase6-final-artifact-check.log): exit0; delivered note2 pages with all21 source blocks, architecture1 page with all8 blocks,85-word first-person AI disclosure identical in note/AI_USAGE.md. All172 historical Phase1-5 capture files match their stored bytes; product hashes still match Phase5. The only unresolved local document links are the two acknowledged missing Phase2 logs. Required final run captures exist with their recorded exit0 values. All final pages were also visually inspected; extraction alone was not used for layout approval. The revised note changes voice, not technical results.
 
 [Final publication-pattern scan](../artifacts/test-output/phase6-publication-audit-final.log) completed exit0 with no prohibited path or credential-pattern matches. [Intended-file inventory snapshot](../artifacts/test-output/phase6-intended-inventory.json) lists actual files/sizes/hashes; its self-referential inventory hash is a snapshot, not a final Git-tree claim. Generated caches/venvs/temporary clone/render PNGs stay ignored. Final Git status/commit IDs are checked after the short final commit; no remote is configured and no push/email is performed.
+
+### My manual API/browser smoke check
+
+I personally performed this check against the running application at http://localhost:3000 and the real FastAPI backend. This entry records the results I reported in chat; it is separate from the Codex-executed automated suites and benchmarks above. No raw terminal capture or screenshot was supplied with this entry, and none has been reconstructed.
+
+Run: `000141f9-4393-450e-9424-88fca6169a4b`.
+
+- I sent 10 `loss` events from PowerShell using a valid project API key, with logical steps in this order: 3, 1, 2, 4, 5, 6, 7, 8, 9, 10.
+- The ingestion response returned `inserted_count=10`, `deduplicated_count=0` and `committed_seq=10`.
+- I retrieved the run through GET and confirmed `event_count=10`, `last_seq=10` and latest `loss=0.1` at step 10.
+- I inspected the run detail page and confirmed 10 committed events, sequence counter 10, the corresponding loss chart and event table. The table retained the out-of-order logical steps while assigning consecutive committed sequence numbers 1-10.
+
+This was my manual API/browser smoke test. It did not include direct PostgreSQL queries, manual SSE reconnection, a review of the entire codebase or independent execution of all automated tests. The automated SQL/reconnection/isolation/load results elsewhere in this document remain Codex-executed checks. No API key is included here.
+
+Documentation refresh: the submission PDF was regenerated and confirmed as2 physical pages; its85-word disclosure matches AI_USAGE.md. Both rendered pages were visually inspected. [Actual PDF build/page-count output](../artifacts/test-output/manual-disclosure-pdf-build.log) and [render output](../artifacts/test-output/manual-disclosure-pdf-render.log) both have exit0; the existing unused-font display warnings remain in the render capture. These are document checks, not another application test or a reconstruction of my manual session.
