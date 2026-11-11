@@ -1,5 +1,15 @@
 # Execution evidence — append-only verification log
 
+## CURRENT STATUS
+
+The application is implemented and has executed verification results. The original **NOT RUN** and starter-context entries below belong to Phase 1, before implementation; this file preserves that history rather than replacing it with current results.
+
+Recorded checks: [58 backend tests](../artifacts/test-output/phase6-backend-tests.log), [10 Playwright tests after the redesign](../artifacts/test-output/redesign-browser-e2e-01.log), and [5 frontend tests](../artifacts/test-output/redesign-client-tests.log) passed. TypeScript, production build, migrations and live smoke checks also passed. The automated suites and benchmarks were executed by Codex; my separate manual API/browser smoke check is documented at the end.
+
+The measured load windows achieved **498.92 events/sec without SSE** and **498.17 with 50 SSE subscribers**. Exact 500 events/sec was not achieved; the 1% tolerance used for the scoped local verdict was self-defined, not specified by Soup. Production capacity remains unproven. Detailed environments, commands, limits, failed runs and known evidence gaps are retained below.
+
+---
+
 No implementation or tests have been run as part of this starter context package. **All test cases: NOT RUN.** A static review of the employer PDF is not an integration test.
 
 For each real command, append an entry; never rewrite or remove a failure when retrying:

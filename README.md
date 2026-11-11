@@ -1,126 +1,89 @@
-# Soup experiment tracker
+# Soup Experiment Tracker
 
-Mini experiment tracker: FastAPI/Pydantic v2, async SQLAlchemy/asyncpg, Alembic, PostgreSQL and Next.js App Router/TypeScript/Tailwind. The dark run list/detail UI displays persisted metrics with authenticated, recoverable SSE.
+Track experiment runs, log metric batches, and follow their history live. Reliable ingestion matters when clients retry requests or lose their connection: the tracker deduplicates events and replays committed history so the browser can recover missed updates.
 
-Start with the [two-page submission note](output/pdf/Soup-Submission-Note.pdf), [requirement audit and limitations](docs/SUBMISSION_AUDIT.md), [one-page architecture](output/pdf/Soup-Architecture.pdf), [test instructions](docs/TESTING.md) and [AI disclosure](docs/AI_USAGE.md). The employer's [follow-up](docs/FOLLOW_UP.md) cancels the live discussion; technical deliverables remain unchanged.
+## Quick start
 
-## Run
-
-Prerequisites: Git and Docker Engine/Desktop with Linux containers and Docker Compose v2, free local ports3000/8000/54329, and network access to pull images/packages on the first build. Host Python/Node are only needed for optional host tests. From the cloned repository root:
+From the repository root, with Docker running:
 
 ```sh
 docker compose up
 ```
 
-Open **http://localhost:3000**. Enter a project API key (or create one in the access form), create/select a run, then ingest metrics via FastAPI. API: `http://localhost:8000`; health: `http://localhost:8000/health`. Startup waits for PostgreSQL and applies Alembic migrations. Data persists in the Compose volume. Local-only ports: web3000, API8000, PostgreSQL54329. Override using `.env.example`; never place project API keys in `.env`. `NEXT_PUBLIC_API_BASE_URL` is a public browser-reachable URL only; changing the web origin also requires updating API CORS_ORIGINS in Compose.
+Open [localhost:3000](http://localhost:3000). Startup builds the images when needed, waits for PostgreSQL, and applies Alembic migrations.
 
-For a detached rebuild/health wait use `docker compose up --build -d --wait`; inspect with `docker compose ps` and stop with `docker compose stop`. `docker compose down -v` destroys the database volume; it is not a restart/recovery command.
+Requires Docker Engine/Desktop with Linux containers and Compose v2, available ports **3000**, **8000** and **54329**, and network access for the first build. Host Python and Node.js are only needed for host-side tests.
 
-## Browser demo - about two minutes
+![Run detail showing persisted metrics, a full-width loss chart and connection controls](artifacts/screenshots/redesign/single-metric-1536x960.png)
 
-1. Open http://localhost:3000 and enter an optional project label.
-2. Click **Create project & key**. Copy the displayed one-time key somewhere safe for this local demo, then click **Connect project** (the key field is already filled). Do not include the key in screenshots, issue reports or logs.
-3. Enter a **New run name**, click **Create run**, then open its run link.
-4. Wait for **connected**, then click **Send demo metrics** on the empty run. Expect40 committed events and live demo.loss/demo.accuracy charts without refreshing.
-5. **Disconnect** pauses the fetch stream; **Reconnect** replays after the applied cursor. Reloading clears the in-memory key: enter the saved key again to see persisted data. **Switch project / key** clears the private session.
+## Features
 
-These are explicitly generated demo samples stored through the real API, not training output. There is no pre-shared project credential or hidden seed data. The browser's network requests go directly to FastAPI with a bearer header; Next.js contains no second business API.
+- **Project-scoped API keys.** The bearer key determines which project's runs can be read, listed, updated or streamed.
+- **Durable, idempotent ingestion.** Events, sequence counters and batch receipts commit together in PostgreSQL. Identical retries return the original receipt; conflicting payloads are rejected. Event IDs also deduplicate across batches.
+- **Deterministic ordering.** A committed per-run sequence orders replay. Logical steps order the chart; the greatest `(step, seq)` determines the latest value, including late and equal-step events.
+- **Recoverable live metrics.** Authenticated SSE replays stored events after the last applied cursor, including events committed between snapshot and subscription. The client reconnects after interruptions and API restarts.
+- **Tenant isolation and key rotation.** Project scope applies to HTTP and SSE. Rotation invalidates old keys and terminates existing subscriptions through an independent revocation check.
 
-## API example
+## Try the browser demo
 
-Create a project using `POST /projects`, JSON `{"name":"demo"}`. Its response returns the only plaintext copy of its key. Use `Authorization: Bearer <key>` for:
+1. Click **Create project & key**, save the one-time key privately, then **Connect project**. The key field is filled automatically.
+2. Enter a **New run name**, click **Create run**, and open the run.
+3. Wait for **Connected**, then click **Send demo metrics**. It sends 40 generated events through the real API and updates the charts without a refresh.
+4. Use **Disconnect** / **Reconnect** to pause and resume the stream. Reloading clears the in-memory key; re-enter it to view persisted runs.
 
-- `POST /runs` with `{"name":"experiment"}`.
-- `GET /runs` (optional `limit`/`after`) and `GET /runs/{id}` (consistent snapshot/count/cursor).
-- `POST /runs/{id}/metrics` with the batch below. Identical retries return the original receipt; changed contents return 409 without writes. Event IDs also deduplicate across batches.
-- `POST /projects/key/rotate` with `{}`. Old key stops working; keep the new key from that response. Lost rotation response has no automatic recovery in this local demo.
+The demo uses generated `demo.loss` and `demo.accuracy` samples, not ML training output. Charts show the last 2,000 events across metrics; latest values include the full run.
 
-```json
-{
-  "batch_id": "be8315a0-8dcc-44f1-85ba-35797778d5e3",
-  "events": [{
-    "event_id": "080110ba-9577-4d8b-8552-6474b88895ae",
-    "metric": "loss", "step": 1, "value": 0.5,
-    "occurred_at": "2026-01-01T00:00:00Z"
-  }]
-}
-```
+For your own client, create a project with `POST /projects`, create a run with `POST /runs`, and send `{batch_id, events}` to `POST /runs/{id}/metrics` using `Authorization: Bearer <key>`. Keep the same batch and event IDs when retrying. The [API contract](docs/API_CONTRACT.md) defines payloads, bounds, rotation and errors.
 
-Generate fresh UUIDv4 IDs for new data; retain them for retries. [API_CONTRACT.md](docs/API_CONTRACT.md) specifies exact bounds, identity and errors. Snapshot winners use greatest `(step,seq)`; seq is commit order, not logical step. Tenant scope derives only from the bearer key. Bootstrap is local and unauthenticated; this is not production account management.
+## Configuration and lifecycle
 
-Runnable PowerShell example, from the repository root with services running. It creates an isolated project/run, keeps its key in memory and prints only the receipt/snapshot. Use the browser workflow above for the interactive demo; this separate project's API key is not printed or persisted.
+The browser uses **http://localhost:3000**, FastAPI **http://localhost:8000**, and PostgreSQL **127.0.0.1:54329**. The API health endpoint is `/health`. Data persists in a Docker volume; all published ports bind to loopback.
 
-```powershell
-$apiBase = 'http://localhost:8000'
-$demoProject = Invoke-RestMethod -Method Post -Uri "$apiBase/projects" -ContentType 'application/json' -Body '{"name":"API demo"}'
-$demoAuth = @{ Authorization = "Bearer $($demoProject.api_key)" }
-$demoRun = Invoke-RestMethod -Method Post -Uri "$apiBase/runs" -Headers $demoAuth -ContentType 'application/json' -Body '{"name":"Example run"}'
-$demoBatch = @{
-    batch_id = [guid]::NewGuid().ToString()
-    events = @(@{
-        event_id = [guid]::NewGuid().ToString()
-        metric = 'loss'; step = 1; value = 0.5
-        occurred_at = '2026-01-01T00:00:00Z'
-    })
-} | ConvertTo-Json -Depth 4
-Invoke-RestMethod -Method Post -Uri "$apiBase/runs/$($demoRun.id)/metrics" -Headers $demoAuth -ContentType 'application/json' -Body $demoBatch
-# Identical retry: same receipt, no extra events.
-Invoke-RestMethod -Method Post -Uri "$apiBase/runs/$($demoRun.id)/metrics" -Headers $demoAuth -ContentType 'application/json' -Body $demoBatch
-Invoke-RestMethod -Uri "$apiBase/runs/$($demoRun.id)" -Headers $demoAuth
-Remove-Variable demoProject,demoAuth
-```
-
-## Verify
-
-Run suites sequentially: browser fault tests intentionally restart API/PostgreSQL. Full prerequisites, Linux/macOS/Windows instructions, failure boundaries and raw-output capture are in [TESTING.md](docs/TESTING.md). Production build: `npm run build` from frontend after `npm ci`.
+Use [.env.example](.env.example) for local port/database settings. `NEXT_PUBLIC_API_BASE_URL` must be a browser-reachable public URL and must never contain an API key. Changing the web origin also requires updating the API's `CORS_ORIGINS` in Compose.
 
 ```sh
-docker compose run --rm api pytest -q
-docker compose exec -T api alembic current
-docker compose exec -T api alembic check
+docker compose up --build -d --wait  # Rebuild and wait for healthy services
+docker compose ps                  # Inspect service health
+docker compose stop                # Stop without deleting stored data
 ```
 
-Tests migrate and truncate the separate `soup_test` database initialized by Compose. Fixtures refuse database names not ending `_test`; do not point them at valuable data or run competing suites against one test database. No SQLite fallback.
+**`docker compose down -v` deletes the database volume.** It is not a recovery or restart command.
 
-Optional host workflow (Windows PowerShell, Python 3.12):
+## Testing and measured results
 
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r backend/requirements-dev.txt -c backend/constraints.txt
-.\.venv\Scripts\python.exe -m pytest -q
-.\.venv\Scripts\python.exe backend/tests/smoke_http.py --restart-api
-```
+| Recorded verification | Result | Raw output |
+| --- | --- | --- |
+| PostgreSQL-backed backend suite | 58 passed | [Backend log](artifacts/test-output/phase6-backend-tests.log) |
+| Playwright after the frontend redesign | 10 passed | [Browser log](artifacts/test-output/redesign-browser-e2e-01.log) |
+| Frontend parser and state tests | 5 passed | [Frontend log](artifacts/test-output/redesign-client-tests.log) |
 
-Live smoke sends real HTTP requests, restarts the API, retries a batch and checks PostgreSQL independently. It creates demo records, keeps keys only in memory and prints no tokens. It expects default local ports/credentials; override `API_BASE_URL` and `DATABASE_URL` as needed. Pytest accepts `TEST_DATABASE_URL`.
+TypeScript checks, production builds, migration checks and live HTTP/SQL smoke checks also passed. Browser tests exercise the actual Next.js UI and compare it with independent SQL after duplicates, late/out-of-order events, stream interruptions, key rotation and project switching.
 
-For direct API startup, set `DATABASE_URL` then, from `backend` in the installed environment, run `alembic upgrade head` and `uvicorn app.main:create_app --factory --host 127.0.0.1 --port 8000 --no-access-log`.
+Each load workload used **50 runs at a target of 10 unique events/sec per run**, batches of five, 10 seconds of warm-up and a 60-second measurement window, plus 300 identical batch retries.
 
-Browser verification (Windows host, full Compose stack running):
+| Workload | Measured metric events/sec |
+| --- | ---: |
+| Ingestion without SSE subscribers | 498.92 |
+| Ingestion with 50 SSE subscribers | 498.17 |
 
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-e2e.txt
-.\.venv\Scripts\python.exe -m playwright install chromium
-.\.venv\Scripts\python.exe -m pytest e2e -q -s
-```
+Each workload stored all 35,000 planned events, including warm-up, with no HTTP failures or missing acknowledged events. **Exact 500 events/sec was not achieved.** The scoped local **SHIP** verdict uses a **self-defined 1% tolerance**, not a threshold specified by Soup. These short local measurements do not establish production capacity.
 
-Client parser/reducer tests and type checks: from `frontend`, run `npm ci`, `npm test`, `npm run typecheck`. Browser E2E creates isolated demo projects in the main demo DB and restarts API during a recovery scenario; run suites sequentially. It does not truncate demo data. Screenshots live in `artifacts/screenshots/`.
+See [test instructions](docs/TESTING.md) for dependencies and commands, [execution evidence](docs/EVIDENCE.md) for environments and qualifications, and [raw results](artifacts/test-output/) for successful and failed runs. `summary.json` and `analysis.json` contain derived measurements rather than raw console output.
 
-Authenticated streaming uses browser `fetch`/ReadableStream, never native EventSource. Initial replay reconstructs charts (last2,000 committed events); reconnect keeps points and sends last applied cursor. Latest values include all history. Keys are ephemeral, cleared on switch/reload, never persisted or sent to Next.js. All business endpoints remain FastAPI-only.
+## Architecture and limits
 
-Measured local load test (same host dependencies, full Compose stack running; creates isolated projects and retains their data):
+FastAPI owns the API and SSE streams; Next.js App Router provides the interface. PostgreSQL is the authoritative event source, accessed through async SQLAlchemy/asyncpg with Alembic migrations. The backend uses Python 3.12 and Pydantic v2; the frontend uses React, TypeScript and Tailwind CSS.
 
-```powershell
-.\.venv\Scripts\python.exe -u scripts/load_test.py --output artifacts/test-output/my-baseline
-.\.venv\Scripts\python.exe -u scripts/load_test.py --subscribers 50 --output artifacts/test-output/my-sse
-.\.venv\Scripts\python.exe scripts/analyze_load.py artifacts/test-output/my-baseline artifacts/test-output/my-sse
-```
+Keys are shown once and kept only in browser memory. Do not put them in URLs, logs, screenshots, committed files or public environment variables. The included database credentials are local demo defaults. Project creation is an unauthenticated local bootstrap; production use needs an access policy and HTTPS. A lost rotation response has no automatic key recovery.
 
-Output directories must be new. Defaults:50 runs x10 unique metric events/s, batch5,10s warmup +60s measurement, controlled exact retries. Authenticated HTTP and optional SSE use real endpoints; asyncpg audits every event/receipt/sequence and compares API snapshots independently. `LOAD_DATABASE_URL` overrides the loopback PostgreSQL connection (pass credentials through the environment, never CLI). Run benchmarks and fault suites sequentially. `summary.json` and `analysis.json` are derived measurements; `requests.jsonl`, `resources.jsonl`, `sse.jsonl` and console captures preserve observations. Each attempt freezes generator source/config; failed attempts remain intact.
+Long-running workloads with many slow SSE clients, aggregate socket memory, large-history replay and external proxies remain unverified. Generic errors and local log/timing checks do not prove that every side channel is closed.
 
-## Measured verdict and evidence
+## Further reading
 
-**SHIP for the tested local profile under a self-defined1% tolerance.** The fixed60s windows achieved **498.92 events/s without SSE** and **498.17 with50 SSE subscribers**. Exact500 events/s was not achieved; Soup did not specify the tolerance. Each workload stored all35,000 planned events without HTTP failures or lost acknowledged events. This is not proof of production capacity, prolonged slow-client safety or an indefinite throughput floor.
-
-Successful and failed captures remain under [artifacts/test-output](artifacts/test-output/); `summary.json`/`analysis.json` are derived, not raw test output. Two historical Phase2 files (`phase2-compile.log`, `phase2-compose-config.log`) are absent, explicitly unverified and not reconstructed. [EVIDENCE.md](docs/EVIDENCE.md) records commands/exit codes, failures, scoped results and limitations; [TEST_MATRIX.md](docs/TEST_MATRIX.md) maps scenarios. No expensive load rerun is needed to reproduce the final functional verification.
-
-The [email reply draft](docs/EMAIL_DRAFT.md) is unsent and contains an explicit repository URL placeholder. Publication and sending are the applicant's final actions. The [original assignment](reference/Soup-Full-Stack-Take-Home.pdf) and [follow-up](docs/FOLLOW_UP.md) are included.
+- [One-page architecture](docs/DESIGN.md) ([PDF](output/pdf/Soup-Architecture.pdf))
+- [Two-page submission note](output/pdf/Soup-Submission-Note.pdf) ([source](docs/SUBMISSION_NOTE.md))
+- [API contract](docs/API_CONTRACT.md)
+- [Test instructions](docs/TESTING.md) and [scenario matrix](docs/TEST_MATRIX.md)
+- [Execution evidence](docs/EVIDENCE.md) and [requirement audit](docs/SUBMISSION_AUDIT.md)
+- [How I used AI](docs/AI_USAGE.md)
+- [Original assignment](reference/Soup-Full-Stack-Take-Home.pdf)
