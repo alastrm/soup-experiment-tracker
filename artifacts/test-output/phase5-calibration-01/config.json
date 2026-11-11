@@ -1,0 +1,21 @@
+{
+  "api": "http://127.0.0.1:8000",
+  "runs": 2,
+  "rate": 10,
+  "batch_size": 5,
+  "warmup": 1,
+  "duration": 3,
+  "retry_every": 2,
+  "subscribers": 2,
+  "disconnect_seconds": 1.0,
+  "output": "artifacts/test-output/phase5-calibration-01",
+  "gates_declared_before_run": {
+    "throughput_tolerance_percent": 1,
+    "primary_p95_ms": 500.0,
+    "primary_p99_ms": 1000,
+    "all_planned_events_required": true,
+    "zero_http_failures_required": true,
+    "exact_sql_and_receipt_audit_required": true,
+    "all_sse_events_required_when_enabled": true
+  }
+}

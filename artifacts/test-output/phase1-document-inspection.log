@@ -1,0 +1,42 @@
+DOCUMENT INSPECTION ONLY - NO APPLICATION OR TEST EXECUTION
+Tooling Python: 3.12.14
+DESIGN words: 440
+A4, 18mm margins, Helvetica 11pt/13.5pt; heading 14pt/17pt; paragraph gap 8pt
+Required height pt: 599.5 Available height pt: 739.84 Fits one page: True
+Missing local Markdown link targets: []
+Project files:
+AGENTS.md
+docs\AI_USAGE.md
+docs\API_CONTRACT.md
+docs\BRIEF.md
+docs\DESIGN.md
+docs\EVIDENCE.md
+docs\PHASE1_HANDOFF.md
+docs\PHASE1_REVIEW.md
+docs\PLAN.md
+docs\STACK_GUIDE.md
+docs\TEST_MATRIX.md
+PROMPT_01.md
+README.md
+reference\Soup-Full-Stack-Take-Home.pdf
+FINAL STATIC DOCUMENT INSPECTION - NOT SOFTWARE TESTS
+Markdown documents: 10
+Missing local link targets: []
+Planned matrix rows: 23
+All matrix rows NOT RUN: True
+File inventory:
+AGENTS.md
+artifacts\test-output\phase1-document-inspection.log
+docs\AI_USAGE.md
+docs\API_CONTRACT.md
+docs\BRIEF.md
+docs\DESIGN.md
+docs\EVIDENCE.md
+docs\PHASE1_HANDOFF.md
+docs\PHASE1_REVIEW.md
+docs\PLAN.md
+docs\STACK_GUIDE.md
+docs\TEST_MATRIX.md
+PROMPT_01.md
+README.md
+reference\Soup-Full-Stack-Take-Home.pdf

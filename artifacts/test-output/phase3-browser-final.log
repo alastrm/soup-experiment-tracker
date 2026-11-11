@@ -1,0 +1,116 @@
+FBROWSER API restart: persistent cursor10 -> gated real reconnect -> committed11-30 -> exact SQL/UI/point sequences1-30 PASS
+.BROWSER snapshot gap: snapshot20, committed21-80 before subscription, all80 recovered; dark desktop/mobile layout PASS
+.
+================================== FAILURES ===================================
+___ test_browser_exact_recovery_duplicates_late_events_rotation_and_switch ____
+
+browser_page = (<Page url='http://localhost:3000/'>, <BrowserContext browser=<Browser type=<BrowserType name=chromium executable_path=C:\Users\madi\AppData\Local\ms-playwright\chromium-1254\chrome-win64\chrome.exe> version=158.0.8127.18>>)
+
+    async def test_browser_exact_recovery_duplicates_late_events_rotation_and_switch(browser_page):
+        page, _ = browser_page
+        cursors = []
+        page.on("request",lambda request: cursors.append(request.headers.get("last-event-id")) if request.url.endswith("/events") else None)
+        async with httpx.AsyncClient(base_url=API,timeout=10) as client:
+            project, auth, run = await create(client,"Recovery proof 1-30")
+            first = batch([event(i) for i in range(1,11)])
+            await send(client,run,auth,first)
+            await page.goto(WEB)
+            await connect(page,project["api_key"])
+            await page.get_by_role("link",name="Recovery proof 1-30",exact=False).click()
+            await expect(page.get_by_test_id("connection-status")).to_have_text("connected")
+            await check_sql_and_visible_points(page,run,10)
+            await page.get_by_role("button",name="Disconnect",exact=True).click()
+            await expect(page.get_by_test_id("connection-status")).to_have_text("disconnected")
+            await expect(page.get_by_test_id("history-count")).to_have_text("10")
+            missed = batch([event(i) for i in range(11,31)])
+            receipt = await send(client,run,auth,missed)
+            assert await send(client,run,auth,missed) == receipt
+            # Force one legitimate repeated event from the actual endpoint. Browser
+            # requests its applied cursor10; interceptor asks server for9 once.
+            repeated = False
+            async def repeat_one(route):
+                nonlocal repeated
+                headers = dict(route.request.headers)
+                if not repeated and headers.get("last-event-id")=="10":
+                    repeated = True;headers["last-event-id"]="9"
+                await route.continue_(headers=headers)
+            await page.route("**/events",repeat_one)
+            await page.get_by_role("button",name="Reconnect",exact=True).click()
+            await expect(page.get_by_test_id("event-count")).to_have_text("30")
+            await expect(page.get_by_test_id("connection-status")).to_have_text("connected")
+            assert "10" in cursors and repeated
+            await check_sql_and_visible_points(page,run,30)
+            await page.unroute("**/events",repeat_one)
+            await send(client,run,auth,batch([event(3,-0.2),event(30,0.02),event(1,0.9,"accuracy")]))
+            await expect(page.get_by_test_id("event-count")).to_have_text("33")
+            await check_sql_and_visible_points(page,run,33)
+            await expect(page.get_by_test_id("latest-loss")).to_have_text("0.02")
+            assert await page.evaluate("Object.keys(localStorage).length+Object.keys(sessionStorage).length") == 0
+            async with httpx.AsyncClient() as public:
+                html = (await public.get(WEB+f"/runs/{run}")).text
+            assert project["api_key"] not in html
+            rotated = await client.post("/projects/key/rotate",headers=auth,json={})
+            assert rotated.status_code == 200
+            await expect(page.get_by_test_id("connection-status")).to_have_text("error")
+            await expect(page.get_by_role("alert").filter(has_text="expired")).to_be_visible()
+            other, other_auth, other_run = await create(client,"Project B only")
+            await page.get_by_role("button",name="Switch project / key").click()
+>           await connect(page,other["api_key"])
+
+e2e\test_browser.py:139: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+e2e\test_browser.py:53: in connect
+    await page.get_by_role("button",name="Connect project",exact=False).click()
+.venv\Lib\site-packages\playwright\async_api\_generated.py:11036: in click
+    await self._impl_obj.click(
+.venv\Lib\site-packages\playwright\_impl\locator.py:222: in click
+    return await self._frame.click(
+.venv\Lib\site-packages\playwright\_impl\frame.py:587: in click
+    return await self._channel.click(
+.venv\Lib\site-packages\playwright\_impl\channel_owner.py:387: in finish
+    raise e from None
+.venv\Lib\site-packages\playwright\_impl\channel_owner.py:352: in finish
+    result = await zone.run_async(lambda: awaitable)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl.utils.zones.Zone object at 0x0000022CA3F7D7C0>
+func = <function ChannelOwner._wrap_api_call.<locals>.finish.<locals>.<lambda> at 0x0000022CA3F584A0>
+
+    async def run_async(self, func: Callable[[], Awaitable[R]]) -> R:
+        # Python: run() of an async function. The coroutine runs when it is awaited,
+        # so the zone must be current while it is awaited, not while it is created.
+        token = _async_local_storage.set(self)
+        try:
+>           return await func()
+                   ^^^^^^^^^^^^
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.
+E           Call log:
+E             - waiting for get_by_role("button", name="Connect project")
+E               - locator resolved to <button class="primary">Connect project \u2192</button>
+E             - attempting click action
+E               - waiting for element to be visible, enabled and stable
+E               - element is not stable
+E             - retrying click action
+E               - waiting for element to be visible, enabled and stable
+E             - element was detached from the DOM, retrying
+E               - locator resolved to <button disabled class="primary">Connect project \u2192</button>
+E             - attempting click action
+E               2 \xd7 waiting for element to be visible, enabled and stable
+E                 - element is not enabled
+E               - retrying click action
+E               - waiting 20ms
+E               2 \xd7 waiting for element to be visible, enabled and stable
+E                 - element is not enabled
+E               - retrying click action
+E                 - waiting 100ms
+E               29 \xd7 waiting for element to be visible, enabled and stable
+E                  - element is not enabled
+E                - retrying click action
+E                  - waiting 500ms
+
+.venv\Lib\site-packages\playwright\_impl\utils\zones.py:58: TimeoutError
+=========================== short test summary info ===========================
+FAILED e2e/test_browser.py::test_browser_exact_recovery_duplicates_late_events_rotation_and_switch
+1 failed, 2 passed in 26.11s
+EXIT_CODE=1

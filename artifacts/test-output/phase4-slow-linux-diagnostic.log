@@ -1,0 +1,6 @@
+ Container soup-task-db-1  Running
+TCP diagnostic: elapsed=5.018s, maximum_buffer=4240B, polled_pressure=False, slots=0
+SLOW TCP: one unread subscriber, server high-water4096B, max_observed_buffer=4240B, cleanup_seconds=5.018, RSS_baseline=90521600B, RSS_peak=90521600B; fixture1000 events, not a throughput/load test
+.
+1 passed in 6.76s
+EXIT_CODE=0

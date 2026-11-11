@@ -1,0 +1,2 @@
+# Preserve authored bytes, especially unedited stdout/stderr evidence captures.
+* -text

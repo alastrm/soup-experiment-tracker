@@ -1,0 +1,6 @@
+BROWSER proof: applied1-10, disconnected, stored11-30, resumed cursor10 (forced duplicate10), applied exact1-30; late/equal-step SQL/UI agreement; live rotation and session isolation PASS
+.BROWSER API restart: persistent cursor10 -> gated real reconnect -> committed11-30 -> exact SQL/UI/point sequences1-30 PASS
+.BROWSER snapshot gap: snapshot20, committed21-80 before subscription, all80 recovered; dark desktop/mobile layout PASS
+.
+3 passed in 12.28s
+EXIT_CODE=0

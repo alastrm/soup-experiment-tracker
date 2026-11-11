@@ -1,0 +1,12 @@
+PARTIAL FRAME: real server frame11 cut over TCP, browser retained10; replay11-30 -> exact SQL/UI points1-30 PASS
+.SESSION ISOLATION: buffered real A frame released after switch to B, no A state/points/storage/cookie leak PASS
+.CONCURRENT UI: overlapping duplicate events/out-of-order/equal steps, exact rows/seq/points vs SQL, old-key write denied/live revoked PASS
+.DB OUTAGE: actual Compose PostgreSQL stop/start, stream stale, failed ingress503, identical retry -> SQL/UI1-20 PASS
+.LOG PRIVACY: actual API/web/DB Docker logs inspected (7558 bytes), token-pattern matches0; invalid-body/SSR key echo absent PASS
+.EMPTY RUN demo button:40 real persisted events,2 live charts, independent SQL/UI agreement PASS
+.BROWSER proof: applied1-10, disconnected, stored11-30, resumed cursor10 (forced duplicate10), applied exact1-30; late/equal-step SQL/UI agreement; live rotation and session isolation PASS
+.BROWSER API restart: persistent cursor10 -> gated real reconnect -> committed11-30 -> exact SQL/UI/point sequences1-30 PASS
+.BROWSER snapshot gap: snapshot20, committed21-80 before subscription, all80 recovered; dark desktop/mobile layout PASS
+.
+9 passed in 34.32s
+EXIT_CODE=0

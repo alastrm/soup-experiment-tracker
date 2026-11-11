@@ -1,0 +1,4 @@
+ Container soup-task-api-1  Restarting
+ Container soup-task-api-1  Started
+{"live_http": "PASS", "api_restarted": true, "migration": "0001", "persisted_events": 3, "persisted_receipts": 1, "identical_retry": "PASS", "cross_project_read_write_list": "PASS", "key_rotation": "PASS", "snapshot_matches_independent_sql": "PASS"}
+EXIT_CODE=0

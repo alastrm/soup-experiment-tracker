@@ -1,0 +1,655 @@
+{
+  "project_id": "8d3ae0b5-09d6-4c20-9cf0-2a990bfdbabb",
+  "runs": [
+    {
+      "run_id": "4644cc31-b350-4662-8483-566e0d09963d",
+      "batches": [
+        {
+          "batch_id": "1935d0d8-b059-4580-ad51-b72d301d5e73",
+          "events": [
+            {
+              "event_id": "f21b3c90-de95-4eb2-979b-212f978c2ba5",
+              "metric": "load.loss",
+              "step": 0,
+              "value": 1.0,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "fb5953e1-9a15-495c-8583-5da0c5c76b67",
+              "metric": "load.accuracy",
+              "step": 0,
+              "value": 0.5,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "1ffbaa13-82a6-458d-b59c-bd3fc5996bff",
+              "metric": "load.loss",
+              "step": 1,
+              "value": 0.3333333333333333,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "463c615a-5c0f-4bc3-83d4-f11c26c5a34b",
+              "metric": "load.accuracy",
+              "step": 1,
+              "value": 0.25,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "1e8101b5-33cb-44b6-810d-d667f4213453",
+              "metric": "load.loss",
+              "step": 2,
+              "value": 0.2,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "80a9cd87-f25b-42f6-a6b2-d50056b212f5",
+          "events": [
+            {
+              "event_id": "2b8be2b8-919b-4ec5-afe3-5744af25ab62",
+              "metric": "load.accuracy",
+              "step": 2,
+              "value": 0.16666666666666666,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "30351497-f4f0-4538-81b1-5ebe1c0694e2",
+              "metric": "load.loss",
+              "step": 3,
+              "value": 0.14285714285714285,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "b96e2ee3-2766-40c6-b8e3-bae4636a2112",
+              "metric": "load.accuracy",
+              "step": 3,
+              "value": 0.125,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "fa40c436-dc2c-49d7-b740-4316cde90809",
+              "metric": "load.loss",
+              "step": 4,
+              "value": 0.1111111111111111,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "18c0cefb-6279-476d-be92-fc616baf3b66",
+              "metric": "load.accuracy",
+              "step": 4,
+              "value": 0.1,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "e08bbe1f-72c6-43b2-add4-ae396d87ef66",
+          "events": [
+            {
+              "event_id": "d28e73ff-20e3-4dfd-ac54-cf5aabdc0a0a",
+              "metric": "load.loss",
+              "step": 5,
+              "value": 0.09090909090909091,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "1c225527-3d7a-45c9-a134-6458d865e9a3",
+              "metric": "load.accuracy",
+              "step": 5,
+              "value": 0.08333333333333333,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "d6d2f3ab-f3ec-43c6-ae17-9cfab07dcede",
+              "metric": "load.loss",
+              "step": 6,
+              "value": 0.07692307692307693,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "c5108e00-cfff-4bd3-8cdb-c2b1decc9f9e",
+              "metric": "load.accuracy",
+              "step": 6,
+              "value": 0.07142857142857142,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "6f5ad38a-52fc-44d8-866c-14662d50ce82",
+              "metric": "load.loss",
+              "step": 7,
+              "value": 0.06666666666666667,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "687c81f6-d2c2-4f72-a994-44aed35688c6",
+          "events": [
+            {
+              "event_id": "a2e0cee7-2bf9-4dcd-a7b7-189a0759b67f",
+              "metric": "load.accuracy",
+              "step": 7,
+              "value": 0.0625,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "c2b6e4a3-a239-4052-9515-366f4baa4fdb",
+              "metric": "load.loss",
+              "step": 8,
+              "value": 0.058823529411764705,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "77f0ee34-5010-46ff-8312-800414d4bd6b",
+              "metric": "load.accuracy",
+              "step": 8,
+              "value": 0.05555555555555555,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "8a2c6c3c-9f87-4742-9391-490568e1e44f",
+              "metric": "load.loss",
+              "step": 9,
+              "value": 0.05263157894736842,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "6bc07087-c28f-48f8-a512-5602923e3bf7",
+              "metric": "load.accuracy",
+              "step": 9,
+              "value": 0.05,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "7c766bff-6826-4dd1-b8fe-c33949fa1ae5",
+          "events": [
+            {
+              "event_id": "a944731f-fa4d-490c-ac9b-421043afa442",
+              "metric": "load.loss",
+              "step": 10,
+              "value": 0.047619047619047616,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "1af0980a-6701-42b5-bdd3-dec1e243366f",
+              "metric": "load.accuracy",
+              "step": 10,
+              "value": 0.045454545454545456,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "0297496f-cb0d-48bb-95d0-3ce204b34bc8",
+              "metric": "load.loss",
+              "step": 11,
+              "value": 0.043478260869565216,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "0488a2a1-85cb-49ac-893b-9c349fa4511c",
+              "metric": "load.accuracy",
+              "step": 11,
+              "value": 0.041666666666666664,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "a25caaaa-5535-4d26-b395-b5bdf49e11aa",
+              "metric": "load.loss",
+              "step": 12,
+              "value": 0.04,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "3c28c911-0d7d-4ad8-8233-97544004a4a7",
+          "events": [
+            {
+              "event_id": "df17af4c-8718-40b4-8e2a-09288fc7dd4f",
+              "metric": "load.accuracy",
+              "step": 12,
+              "value": 0.038461538461538464,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "9e3c7279-f6b1-4c6d-a420-5ddf5af077a3",
+              "metric": "load.loss",
+              "step": 13,
+              "value": 0.037037037037037035,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "a80219cc-ee8c-44cd-8c0f-77edceb80096",
+              "metric": "load.accuracy",
+              "step": 13,
+              "value": 0.03571428571428571,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "eee4092d-8df7-49ac-9b89-b384be9771c3",
+              "metric": "load.loss",
+              "step": 14,
+              "value": 0.034482758620689655,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "2a0c0918-cd3c-4158-86f8-e6fe8d702905",
+              "metric": "load.accuracy",
+              "step": 14,
+              "value": 0.03333333333333333,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "93909e06-da9e-4461-b6be-35a61ad5ac0f",
+          "events": [
+            {
+              "event_id": "692cb85e-937d-4b29-880b-869fe52a410a",
+              "metric": "load.loss",
+              "step": 15,
+              "value": 0.03225806451612903,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "24d685b0-f2dc-4499-b186-432d8e991bc5",
+              "metric": "load.accuracy",
+              "step": 15,
+              "value": 0.03125,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "c82797cd-fdd2-4465-a914-4d4c0fbcfed6",
+              "metric": "load.loss",
+              "step": 16,
+              "value": 0.030303030303030304,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "540949d4-b9f4-4dc9-b337-20fca34402a9",
+              "metric": "load.accuracy",
+              "step": 16,
+              "value": 0.029411764705882353,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "0acbb525-4062-427a-b31d-3c24024cf000",
+              "metric": "load.loss",
+              "step": 17,
+              "value": 0.02857142857142857,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "c0fcd184-d3d6-493f-94cb-911eb9720a87",
+          "events": [
+            {
+              "event_id": "d404f193-e213-47e5-b2a4-67d981d616af",
+              "metric": "load.accuracy",
+              "step": 17,
+              "value": 0.027777777777777776,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "5512815d-4f24-4410-9f72-763a300f9376",
+              "metric": "load.loss",
+              "step": 18,
+              "value": 0.02702702702702703,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "7a8b46e5-23e6-4bcc-81a2-80c2404b0056",
+              "metric": "load.accuracy",
+              "step": 18,
+              "value": 0.02631578947368421,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "78a8c88e-ebb7-44c1-a99d-48f0d389ac6e",
+              "metric": "load.loss",
+              "step": 19,
+              "value": 0.02564102564102564,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "f4b85994-d0ab-4995-9829-8efa828199e5",
+              "metric": "load.accuracy",
+              "step": 19,
+              "value": 0.025,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run_id": "73d350e0-abd0-4d19-8b24-ca20842c44fa",
+      "batches": [
+        {
+          "batch_id": "d4a0d037-50c0-40ae-b6c1-5ad982c26146",
+          "events": [
+            {
+              "event_id": "87f72eff-cccc-487d-ad13-694353f253dc",
+              "metric": "load.loss",
+              "step": 0,
+              "value": 2.0,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "7d568722-9082-4988-beaf-54b069815067",
+              "metric": "load.accuracy",
+              "step": 0,
+              "value": 1.0,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "07c66d6b-7f5c-469a-873a-8c3db74eaa70",
+              "metric": "load.loss",
+              "step": 1,
+              "value": 0.6666666666666666,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "f6650d27-f4de-4f96-8530-debed8de7f4f",
+              "metric": "load.accuracy",
+              "step": 1,
+              "value": 0.5,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "df4fd9ce-0e80-4283-9364-24d190968f8f",
+              "metric": "load.loss",
+              "step": 2,
+              "value": 0.4,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "f0a92119-4407-4642-8ad0-8bb8524fc7b4",
+          "events": [
+            {
+              "event_id": "5b052965-b182-410c-a75b-994aa7146cd5",
+              "metric": "load.accuracy",
+              "step": 2,
+              "value": 0.3333333333333333,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "42968041-0685-428d-a08d-4502190fc71a",
+              "metric": "load.loss",
+              "step": 3,
+              "value": 0.2857142857142857,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "9386cd81-07ad-4cc1-8e5f-c8555e0ccc1b",
+              "metric": "load.accuracy",
+              "step": 3,
+              "value": 0.25,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "cfa32389-0cad-41b5-91df-eeaad866e271",
+              "metric": "load.loss",
+              "step": 4,
+              "value": 0.2222222222222222,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "537ef5a9-aa0b-4094-bc8f-c8916a80acea",
+              "metric": "load.accuracy",
+              "step": 4,
+              "value": 0.2,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "d7f8c4f0-a770-465d-816c-73b7d72fc508",
+          "events": [
+            {
+              "event_id": "52878603-cab5-4b73-a691-cc52ac55f7a6",
+              "metric": "load.loss",
+              "step": 5,
+              "value": 0.18181818181818182,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "6899f16b-ace0-43e7-9ad7-427280918892",
+              "metric": "load.accuracy",
+              "step": 5,
+              "value": 0.16666666666666666,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "d0dddf8d-a41e-40d7-86d9-1453acad71dc",
+              "metric": "load.loss",
+              "step": 6,
+              "value": 0.15384615384615385,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "7fc035bb-3b31-4f50-9c37-36c6e1613b4c",
+              "metric": "load.accuracy",
+              "step": 6,
+              "value": 0.14285714285714285,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "96baf1a6-7da8-4039-b337-6421cefb29e9",
+              "metric": "load.loss",
+              "step": 7,
+              "value": 0.13333333333333333,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "e8188504-a0eb-4570-b8eb-5a910d69fce2",
+          "events": [
+            {
+              "event_id": "43637f78-cb3f-40db-b84f-d483b1261428",
+              "metric": "load.accuracy",
+              "step": 7,
+              "value": 0.125,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "14385ead-5729-4563-ac7a-9740f8622eae",
+              "metric": "load.loss",
+              "step": 8,
+              "value": 0.11764705882352941,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "89de5a72-38f5-4e66-8f48-7f81859a1603",
+              "metric": "load.accuracy",
+              "step": 8,
+              "value": 0.1111111111111111,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "6802e24b-5c99-40ec-89c4-02e37f954bc9",
+              "metric": "load.loss",
+              "step": 9,
+              "value": 0.10526315789473684,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "ba455d5d-44d1-480f-8f2e-06e047286f59",
+              "metric": "load.accuracy",
+              "step": 9,
+              "value": 0.1,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "f95d48c2-2e83-4126-bd58-e733fd9c8b7c",
+          "events": [
+            {
+              "event_id": "0b0f064c-8ef6-412b-83ac-6da8b441b389",
+              "metric": "load.loss",
+              "step": 10,
+              "value": 0.09523809523809523,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "a78672c4-43d1-4971-91f9-e1059946470f",
+              "metric": "load.accuracy",
+              "step": 10,
+              "value": 0.09090909090909091,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "bbcc6fb0-9bb4-4056-af33-9d7f82e8c469",
+              "metric": "load.loss",
+              "step": 11,
+              "value": 0.08695652173913043,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "81bd7762-6392-48eb-ad55-e85989af3b82",
+              "metric": "load.accuracy",
+              "step": 11,
+              "value": 0.08333333333333333,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "7d21039f-0f44-4f35-9865-9f6a945dc678",
+              "metric": "load.loss",
+              "step": 12,
+              "value": 0.08,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "8b316377-ac57-4887-8377-11c7d05ea809",
+          "events": [
+            {
+              "event_id": "980d26ca-570d-4f3e-8493-97d97b1493f4",
+              "metric": "load.accuracy",
+              "step": 12,
+              "value": 0.07692307692307693,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "1a47cf20-630b-40a0-ac94-9eb6ed3622bf",
+              "metric": "load.loss",
+              "step": 13,
+              "value": 0.07407407407407407,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "e99c1489-8134-458b-83c5-15f0bcd3b2f2",
+              "metric": "load.accuracy",
+              "step": 13,
+              "value": 0.07142857142857142,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "55830256-ae97-49f5-8142-680ad234aa99",
+              "metric": "load.loss",
+              "step": 14,
+              "value": 0.06896551724137931,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "280c88d7-d2e0-4a1c-9474-88cb68409581",
+              "metric": "load.accuracy",
+              "step": 14,
+              "value": 0.06666666666666667,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "40baa504-5e08-4b8b-91c1-b3f4b773775f",
+          "events": [
+            {
+              "event_id": "0d63678a-a87c-403b-9bdf-8def4a3cf274",
+              "metric": "load.loss",
+              "step": 15,
+              "value": 0.06451612903225806,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "061889be-ce5b-4ba0-a19a-d33f5a53207d",
+              "metric": "load.accuracy",
+              "step": 15,
+              "value": 0.0625,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "c3637e89-923a-47c1-8a41-9b83812ee3b7",
+              "metric": "load.loss",
+              "step": 16,
+              "value": 0.06060606060606061,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "646ca2f0-d3bb-4ab4-89ea-37ff87375399",
+              "metric": "load.accuracy",
+              "step": 16,
+              "value": 0.058823529411764705,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "8244fa4f-1a9f-4dad-a4b8-bde3d4975bbb",
+              "metric": "load.loss",
+              "step": 17,
+              "value": 0.05714285714285714,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        },
+        {
+          "batch_id": "065f8474-9a60-4aa1-9a8c-0ee93fc8f022",
+          "events": [
+            {
+              "event_id": "ae85727e-ea64-4533-a250-f294bdf7c762",
+              "metric": "load.accuracy",
+              "step": 17,
+              "value": 0.05555555555555555,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "f97aea8d-ae02-4b95-aae7-b4ce132b4321",
+              "metric": "load.loss",
+              "step": 18,
+              "value": 0.05405405405405406,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "cafc4cb1-4de5-4407-a0ad-6627922fdd05",
+              "metric": "load.accuracy",
+              "step": 18,
+              "value": 0.05263157894736842,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "1455533e-3a96-42f3-8e78-58a58647851d",
+              "metric": "load.loss",
+              "step": 19,
+              "value": 0.05128205128205128,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            },
+            {
+              "event_id": "44631d09-7142-4ab7-8bb9-f1684e7c524d",
+              "metric": "load.accuracy",
+              "step": 19,
+              "value": 0.05,
+              "occurred_at": "2026-11-11T10:30:59.687380Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+db-1   | 
+db-1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1   | 
+api-1  | INFO:     Started server process [1]
+db-1   | 2026-11-11 10:28:00.320 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Application startup complete.
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1  | ERROR:    ASGI callable returned without completing response.
+db-1   | 2026-11-11 10:28:00.321 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1   | 2026-11-11 10:28:00.321 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+api-1  | INFO:     Shutting down
+db-1   | 2026-11-11 10:28:00.330 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+api-1  | INFO:     Waiting for connections to close. (CTRL+C to force quit)
+db-1   | 2026-11-11 10:28:00.347 UTC [29] LOG:  database system was shut down at 2026-11-10 21:03:15 UTC
+api-1  | INFO:     Started server process [1]
+api-1  | INFO:     Waiting for application startup.
+api-1  | INFO:     Application startup complete.
+db-1   | 2026-11-11 10:28:00.375 UTC [1] LOG:  database system is ready to accept connections
+api-1  | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+db-1   | 2026-11-11 10:33:00.344 UTC [27] LOG:  checkpoint starting: time
+db-1   | 2026-11-11 10:36:03.378 UTC [27] LOG:  checkpoint complete: wrote 1833 buffers (11.2%); 0 WAL file(s) added, 0 removed, 2 recycled; write=183.001 s, sync=0.011 s, total=183.035 s; sync files=29, longest=0.007 s, average=0.001 s; distance=18680 kB, estimate=18680 kB; lsn=0/6647070, redo lsn=0/42181D0
+db-1   | 2026-11-11 10:37:51.633 UTC [3228] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:37:51.724 UTC [3232] ERROR:  private_commit_sentinel
+db-1   | 2026-11-11 10:37:51.724 UTC [3232] CONTEXT:  PL/pgSQL function phase4_reject_commit() line 2 at RAISE
+db-1   | 2026-11-11 10:37:51.724 UTC [3232] STATEMENT:  COMMIT;
+db-1   | 2026-11-11 10:37:54.007 UTC [3238] ERROR:  canceling statement due to user request
+db-1   | 2026-11-11 10:37:54.007 UTC [3238] STATEMENT:  SELECT projects.id 
+db-1   | 	FROM projects 
+db-1   | 	WHERE projects.id = $1::UUID AND projects.key_hash = $2::BYTEA AND projects.key_version = $3::BIGINT
+db-1   | 2026-11-11 10:37:54.012 UTC [3237] ERROR:  canceling statement due to user request
+db-1   | 2026-11-11 10:37:54.012 UTC [3237] STATEMENT:  SELECT metric_events.run_id, metric_events.event_id, metric_events.project_id, metric_events.seq, metric_events.metric, metric_events.step, metric_events.value, metric_events.occurred_at 
+db-1   | 	FROM metric_events 
+db-1   | 	WHERE metric_events.project_id = $1::UUID AND metric_events.run_id = $2::UUID AND metric_events.seq > $3::BIGINT AND metric_events.seq <= $4::BIGINT ORDER BY metric_events.seq 
+db-1   | 	 LIMIT $5::INTEGER
+db-1   | 2026-11-11 10:37:55.416 UTC [3252] ERROR:  canceling statement due to user request
+db-1   | 2026-11-11 10:37:55.416 UTC [3252] STATEMENT:  SELECT metric_events.run_id, metric_events.event_id, metric_events.project_id, metric_events.seq, metric_events.metric, metric_events.step, metric_events.value, metric_events.occurred_at 
+db-1   | 	FROM metric_events 
+db-1   | 	WHERE metric_events.project_id = $1::UUID AND metric_events.run_id = $2::UUID AND metric_events.seq > $3::BIGINT AND metric_events.seq <= $4::BIGINT ORDER BY metric_events.seq 
+db-1   | 	 LIMIT $5::INTEGER
+db-1   | 2026-11-11 10:38:00.411 UTC [27] LOG:  checkpoint starting: time
+db-1   | 2026-11-11 10:38:13.309 UTC [3404] ERROR:  canceling statement due to lock timeout
+db-1   | 2026-11-11 10:38:13.309 UTC [3404] CONTEXT:  while locking tuple (0,1) in relation "runs"
+db-1   | 2026-11-11 10:38:13.309 UTC [3404] STATEMENT:  SELECT runs.id, runs.project_id, runs.name, runs.created_at, runs.last_seq 
+db-1   | 	FROM runs 
+db-1   | 	WHERE runs.project_id = $1::UUID AND runs.id = $2::UUID FOR UPDATE
+db-1   | 2026-11-11 10:39:06.747 UTC [1] LOG:  received fast shutdown request
+db-1   | 2026-11-11 10:39:06.748 UTC [1] LOG:  aborting any active transactions
+db-1   | 2026-11-11 10:39:06.749 UTC [3120] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.749 UTC [3104] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.749 UTC [3102] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.749 UTC [3108] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.749 UTC [3096] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.749 UTC [3118] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.749 UTC [3105] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.750 UTC [3059] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.750 UTC [1] LOG:  background worker "logical replication launcher" (PID 32) exited with exit code 1
+db-1   | 2026-11-11 10:39:06.751 UTC [3119] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.751 UTC [3115] FATAL:  terminating connection due to administrator command
+db-1   | 2026-11-11 10:39:06.756 UTC [3638] FATAL:  the database system is shutting down
+db-1   | 2026-11-11 10:39:06.911 UTC [27] LOG:  checkpoint complete: wrote 6947 buffers (42.4%); 0 WAL file(s) added, 0 removed, 4 recycled; write=66.368 s, sync=0.110 s, total=66.500 s; sync files=1023, longest=0.005 s, average=0.001 s; distance=69085 kB, estimate=69085 kB; lsn=0/87A36A8, redo lsn=0/858F970
+db-1   | 2026-11-11 10:39:06.911 UTC [27] LOG:  shutting down
+db-1   | 2026-11-11 10:39:06.913 UTC [27] LOG:  checkpoint starting: shutdown immediate
+db-1   | 2026-11-11 10:39:06.935 UTC [27] LOG:  checkpoint complete: wrote 112 buffers (0.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.007 s, total=0.024 s; sync files=45, longest=0.002 s, average=0.001 s; distance=2127 kB, estimate=62390 kB; lsn=0/87A3720, redo lsn=0/87A3720
+db-1   | 2026-11-11 10:39:06.944 UTC [1] LOG:  database system is shut down
+db-1   | 
+db-1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1   | 
+db-1   | 2026-11-11 10:39:11.637 UTC [1] LOG:  starting PostgreSQL 17.11 (Debian 17.11-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+db-1   | 2026-11-11 10:39:11.637 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1   | 2026-11-11 10:39:11.637 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1   | 2026-11-11 10:39:11.640 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1   | 2026-11-11 10:39:11.644 UTC [29] LOG:  database system was shut down at 2026-11-11 10:39:06 UTC
+db-1   | 2026-11-11 10:39:11.651 UTC [1] LOG:  database system is ready to accept connections
+web-1  | ▲ Next.js 16.4.6
+web-1  | - Local:         http://localhost:3000
+web-1  | - Network:       http://0.0.0.0:3000
+web-1  | ✓ Ready in 0ms
+web-1  | ✓ Running next.config took 0.7ms

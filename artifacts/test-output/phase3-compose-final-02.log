@@ -1,0 +1,157 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 996B 0.0s done
+#1 DONE 0.0s
+
+#2 [web internal] load build definition from Dockerfile
+#2 transferring dockerfile: 607B 0.0s done
+#2 DONE 0.0s
+
+#3 [api internal] load build definition from Dockerfile
+#3 transferring dockerfile: 530B done
+#3 DONE 0.0s
+
+#4 [api internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#4 ...
+
+#5 [web internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#5 DONE 1.2s
+
+#6 [web internal] load .dockerignore
+#6 transferring context: 73B done
+#6 DONE 0.0s
+
+#7 [web build 1/6] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+#7 resolve docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d 0.0s done
+#7 DONE 0.0s
+
+#8 [web internal] load build context
+#8 transferring context: 13.50kB 0.0s done
+#8 DONE 0.1s
+
+#9 [web build 2/6] WORKDIR /app
+#9 CACHED
+
+#10 [web build 3/6] COPY package.json package-lock.json ./
+#10 CACHED
+
+#11 [web build 4/6] RUN npm ci
+#11 CACHED
+
+#12 [web build 5/6] COPY . .
+#12 DONE 0.0s
+
+#4 [api internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#4 DONE 1.5s
+
+#13 [web build 6/6] RUN npm run build
+#13 ...
+
+#14 [api internal] load .dockerignore
+#14 transferring context: 78B done
+#14 DONE 0.0s
+
+#15 [api internal] load build context
+#15 transferring context: 2.04kB done
+#15 DONE 0.0s
+
+#16 [api 1/5] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#16 resolve docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.0s done
+#16 DONE 0.0s
+
+#17 [api 2/5] WORKDIR /app
+#17 CACHED
+
+#18 [api 4/5] RUN pip install --no-cache-dir -r requirements-dev.txt -c constraints.txt     && useradd --create-home soup
+#18 CACHED
+
+#19 [api 3/5] COPY requirements.txt requirements-dev.txt constraints.txt ./
+#19 CACHED
+
+#20 [api 5/5] COPY . .
+#20 CACHED
+
+#21 [api] exporting to image
+#21 exporting layers done
+#21 exporting manifest sha256:461bc19d78079bbb1ef426ddebf9457be42301f3c546ed6a3e5b9bbdb1077e75 done
+#21 exporting config sha256:a9cf3f207a99659a75bbb97f784c8c64a6299e637735cb5c9d582af990507909 done
+#21 exporting attestation manifest sha256:1279665fe6798b38827cb4d3682cf491fdfdd97ae7f9e8f929e1c63c23710773 0.0s done
+#21 exporting manifest list sha256:967126c6557b8c89c988971be7e95b79cb2e9ff998eebb8b1b73ed5570890739 done
+#21 naming to docker.io/library/soup-task-api:latest done
+#21 unpacking to docker.io/library/soup-task-api:latest 0.0s done
+#21 DONE 0.1s
+
+#22 [api] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#13 [web build 6/6] RUN npm run build
+#13 0.346 
+#13 0.346 > soup-tracker@0.1.0 build
+#13 0.346 > next build
+#13 0.346 
+#13 0.739 ▲ Next.js 16.4.6 (Turbopack)
+#13 0.764 ✓ Running next.config.ts took 24ms
+#13 0.773 
+#13 0.790   Creating an optimized production build ...
+#13 2.488 ✓ Compiled successfully in 1695ms
+#13 2.490   Running TypeScript ...
+#13 2.775   Finished TypeScript in 285ms ...
+#13 2.776   Collecting page data using 5 workers ...
+#13 3.140   Generating static pages using 5 workers (0/3) ...
+#13 3.491 ✓ Generating static pages using 5 workers (3/3) in 351ms
+#13 3.494   Finalizing page optimization ...
+#13 3.650 
+#13 3.652 Route (app)
+#13 3.652 ┌ ○ /
+#13 3.652 ├ ○ /_not-found
+#13 3.652 └ ƒ /runs/[id]
+#13 3.652 
+#13 3.652 
+#13 3.652 ○  (Static)   prerendered as static content
+#13 3.652 ƒ  (Dynamic)  server-rendered on demand
+#13 3.652 
+#13 DONE 3.7s
+
+#9 [web build 2/6] WORKDIR /app
+#9 CACHED
+
+#23 [web stage-1 3/4] COPY --from=build --chown=node:node /app/.next/standalone ./
+#23 DONE 0.3s
+
+#24 [web stage-1 4/4] COPY --from=build --chown=node:node /app/.next/static ./.next/static
+#24 DONE 0.0s
+
+#25 [web] exporting to image
+#25 exporting layers 1.7s done
+#25 exporting manifest sha256:a1760d4ccb0b9821090827c24375d9bcba6c144fce740aca374e80e9021cc291 0.0s done
+#25 exporting config sha256:89bbdaf88d460b413d1e462d118b74965cda4b4b337234d01b5ba811241036de done
+#25 exporting attestation manifest sha256:79c4825abbe19ab6bc9757592431b3d3ef836f78c098693c3d9aea724eee3c87 0.0s done
+#25 exporting manifest list sha256:bdc7232114a34d3d88c45de1414ab03f84e11ca280f81c0c8925fd9b1e402fa9 0.0s done
+#25 naming to docker.io/library/soup-task-web:latest done
+#25 unpacking to docker.io/library/soup-task-web:latest
+#25 unpacking to docker.io/library/soup-task-web:latest 0.5s done
+#25 DONE 2.3s
+
+#26 [web] resolving provenance for metadata file
+#26 DONE 0.0s
+ soup-task-web  Built
+ soup-task-api  Built
+ Container soup-task-db-1  Running
+ Container soup-task-api-1  Recreate
+ Container soup-task-api-1  Recreated
+ Container soup-task-web-1  Recreate
+ Container soup-task-web-1  Recreated
+ Container soup-task-db-1  Waiting
+ Container soup-task-db-1  Healthy
+ Container soup-task-api-1  Starting
+ Container soup-task-api-1  Started
+ Container soup-task-api-1  Waiting
+ Container soup-task-api-1  Healthy
+ Container soup-task-web-1  Starting
+ Container soup-task-web-1  Started
+ Container soup-task-api-1  Waiting
+ Container soup-task-web-1  Waiting
+ Container soup-task-db-1  Waiting
+ Container soup-task-api-1  Healthy
+ Container soup-task-db-1  Healthy
+ Container soup-task-web-1  Healthy
+EXIT_CODE=0

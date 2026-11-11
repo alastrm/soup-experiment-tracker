@@ -1,0 +1,3 @@
+output\pdf\Soup-Submission-Note.pdf: pages=2, words=978
+output\pdf\Soup-Architecture.pdf: pages=1, words=445
+EXIT_CODE=0

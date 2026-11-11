@@ -1,0 +1,33 @@
+Wed Nov 11 15:33:17 2026    artifacts/test-output/phase5-generator-profile.pstats
+
+         6428990 function calls (5939568 primitive calls) in 12.460 seconds
+
+   Ordered by: internal time
+   List reduced from 3347 to 22 due to restriction <22>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+     3407    2.463    0.001    2.463    0.001 {built-in method _overlapped.GetQueuedCompletionStatus}
+    24487    2.129    0.000    2.129    0.000 {built-in method nt.stat}
+   119056    1.066    0.000    1.665    0.000 <frozen importlib._bootstrap_external>:96(_path_join)
+    23815    0.377    0.000    4.285    0.000 <frozen importlib._bootstrap_external>:1597(find_spec)
+        2    0.349    0.175    0.349    0.175 {method 'load_verify_locations' of '_ssl._SSLContext' objects}
+     1629    0.347    0.000    3.978    0.002 C:\AGp\SoupTask\.venv\Lib\site-packages\httpcore\_async\connection_pool.py:270(_assign_requests_to_connections)
+        4    0.331    0.083    0.331    0.083 {built-in method _wmi.exec_query}
+   507222    0.273    0.000    0.411    0.000 C:\AGp\SoupTask\.venv\Lib\site-packages\httpcore\_async\connection.py:192(is_idle)
+    19271    0.206    0.000    0.579    0.000 C:\AGp\SoupTask\.venv\Lib\site-packages\anyio\abc\_sockets.py:143(extra_attributes)
+    19244    0.180    0.000    0.180    0.000 {built-in method select.select}
+   358433    0.147    0.000    0.147    0.000 {method 'rstrip' of 'str' objects}
+   360063    0.145    0.000    0.145    0.000 {method 'endswith' of 'str' objects}
+   503788    0.138    0.000    0.138    0.000 C:\AGp\SoupTask\.venv\Lib\site-packages\httpcore\_async\http11.py:288(is_idle)
+   245297    0.126    0.000    0.126    0.000 {method 'startswith' of 'str' objects}
+323029/321305    0.089    0.000    0.090    0.000 {built-in method builtins.len}
+      860    0.080    0.000    0.080    0.000 {method 'WSASend' of '_overlapped.Overlapped' objects}
+      257    0.078    0.000    0.078    0.000 {built-in method _io.open_code}
+     3603    0.077    0.000    4.400    0.001 <frozen importlib._bootstrap_external>:1495(_get_spec)
+   165965    0.076    0.000    0.076    0.000 {method 'append' of 'list' objects}
+402505/112272    0.076    0.000    0.142    0.000 C:\Users\madi\AppData\Local\Programs\Python\Python312\Lib\json\encoder.py:334(_iterencode_dict)
+    19301    0.073    0.000    0.073    0.000 {method 'getpeername' of '_socket.socket' objects}
+   126641    0.070    0.000    0.070    0.000 {method 'join' of 'str' objects}
+
+
+EXIT_CODE=0

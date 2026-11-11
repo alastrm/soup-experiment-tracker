@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "stored_events": 80,
+  "stored_receipts": 16,
+  "runs": [
+    {
+      "run_id": "4644cc31-b350-4662-8483-566e0d09963d",
+      "expected_events": 40,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": []
+    },
+    {
+      "run_id": "73d350e0-abd0-4d19-8b24-ca20842c44fa",
+      "expected_events": 40,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,196 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 996B 0.0s done
+#1 DONE 0.0s
+
+#2 [web internal] load build definition from Dockerfile
+#2 transferring dockerfile: 607B 0.0s done
+#2 DONE 0.0s
+
+#3 [api internal] load build definition from Dockerfile
+#3 transferring dockerfile: 530B 0.0s done
+#3 DONE 0.0s
+
+#4 [api internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#4 DONE 1.5s
+
+#5 [web internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#5 ...
+
+#6 [api internal] load .dockerignore
+#6 transferring context: 78B done
+#6 DONE 0.0s
+
+#7 [api 1/5] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#7 resolve docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.0s done
+#7 DONE 0.0s
+
+#8 [api internal] load build context
+#8 transferring context: 86.74kB 0.1s done
+#8 DONE 0.1s
+
+#9 [api 2/5] WORKDIR /app
+#9 CACHED
+
+#10 [api 3/5] COPY requirements.txt requirements-dev.txt constraints.txt ./
+#10 CACHED
+
+#11 [api 4/5] RUN pip install --no-cache-dir -r requirements-dev.txt -c constraints.txt     && useradd --create-home soup
+#11 CACHED
+
+#12 [api 5/5] COPY . .
+#12 DONE 0.0s
+
+#13 [api] exporting to image
+#13 exporting layers 0.1s done
+#13 exporting manifest sha256:461bc19d78079bbb1ef426ddebf9457be42301f3c546ed6a3e5b9bbdb1077e75 0.0s done
+#13 exporting config sha256:a9cf3f207a99659a75bbb97f784c8c64a6299e637735cb5c9d582af990507909 done
+#13 exporting attestation manifest sha256:26fea8055d39d1a6e11429964045e380684cf59204198603ba2ba26f02a48872
+#13 exporting attestation manifest sha256:26fea8055d39d1a6e11429964045e380684cf59204198603ba2ba26f02a48872 0.0s done
+#13 exporting manifest list sha256:5e38bcff196c12646c301d1f59d12aba264786d36f1f86bb956670fb36ea7f0f done
+#13 naming to docker.io/library/soup-task-api:latest done
+#13 unpacking to docker.io/library/soup-task-api:latest 0.0s done
+#13 DONE 0.2s
+
+#14 [api] resolving provenance for metadata file
+#14 DONE 0.0s
+
+#5 [web internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#5 DONE 3.2s
+
+#15 [web internal] load .dockerignore
+#15 transferring context: 73B 0.0s done
+#15 DONE 0.0s
+
+#16 [web build 1/6] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+#16 resolve docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d 0.0s done
+#16 DONE 0.1s
+
+#17 [web internal] load build context
+#17 transferring context: 107.59kB 0.1s done
+#17 DONE 0.1s
+
+#16 [web build 1/6] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+#16 sha256:ff2c4258f9cf850b921ff6d790c9a52585dca4811afdb2b78f92be33696d8b5d 0B / 448B 0.2s
+#16 sha256:ff2c4258f9cf850b921ff6d790c9a52585dca4811afdb2b78f92be33696d8b5d 448B / 448B 0.3s
+#16 sha256:1b7992cf5ea802ac4b2bcb787738f6040d742e27f6d10e1395bee16b0a3c6d03 0B / 1.71MB 0.2s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 0B / 49.89MB 0.2s
+#16 sha256:3c5f479ca65a7b3147df7d9724ac331de960e91ea4034826b7a5c3f9eed57934 0B / 3.31kB 0.2s
+#16 sha256:ff2c4258f9cf850b921ff6d790c9a52585dca4811afdb2b78f92be33696d8b5d 448B / 448B 0.3s done
+#16 sha256:3c5f479ca65a7b3147df7d9724ac331de960e91ea4034826b7a5c3f9eed57934 3.31kB / 3.31kB 0.8s done
+#16 extracting sha256:3c5f479ca65a7b3147df7d9724ac331de960e91ea4034826b7a5c3f9eed57934 0.0s done
+#16 sha256:1b7992cf5ea802ac4b2bcb787738f6040d742e27f6d10e1395bee16b0a3c6d03 1.71MB / 1.71MB 1.0s done
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 3.15MB / 49.89MB 1.5s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 6.29MB / 49.89MB 1.8s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 10.49MB / 49.89MB 2.3s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 15.73MB / 49.89MB 2.7s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 19.92MB / 49.89MB 2.9s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 23.07MB / 49.89MB 3.0s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 27.26MB / 49.89MB 3.3s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 31.46MB / 49.89MB 3.6s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 36.70MB / 49.89MB 3.8s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 41.94MB / 49.89MB 4.1s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 47.19MB / 49.89MB 4.4s
+#16 sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 49.89MB / 49.89MB 4.5s done
+#16 extracting sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6
+#16 extracting sha256:5d0c6c5710f1cdc2a30a47c236d5a75ab16d2785fc0aed022b46273ffafd13c6 0.8s done
+#16 DONE 5.4s
+
+#16 [web build 1/6] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+#16 extracting sha256:1b7992cf5ea802ac4b2bcb787738f6040d742e27f6d10e1395bee16b0a3c6d03 0.0s done
+#16 extracting sha256:ff2c4258f9cf850b921ff6d790c9a52585dca4811afdb2b78f92be33696d8b5d 0.0s done
+#16 DONE 5.4s
+
+#18 [web build 2/6] WORKDIR /app
+#18 DONE 0.1s
+
+#19 [web build 3/6] COPY package.json package-lock.json ./
+#19 DONE 0.0s
+
+#20 [web build 4/6] RUN npm ci
+#20 9.809 
+#20 9.809 added 56 packages, and audited 63 packages in 10s
+#20 9.809 
+#20 9.809 15 packages are looking for funding
+#20 9.809   run `npm fund` for details
+#20 9.810 
+#20 9.810 found 0 vulnerabilities
+#20 9.811 npm notice
+#20 9.811 npm notice New major version of npm available! 10.9.9 -> 12.2.2
+#20 9.811 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+#20 9.811 npm notice To update run: npm install -g npm@12.2.2
+#20 9.811 npm notice
+#20 DONE 10.0s
+
+#21 [web build 5/6] COPY . .
+#21 DONE 0.1s
+
+#22 [web build 6/6] RUN npm run build
+#22 0.258 
+#22 0.258 > soup-tracker@0.1.0 build
+#22 0.258 > next build
+#22 0.258 
+#22 0.511 ▲ Next.js 16.4.6 (Turbopack)
+#22 0.533 ✓ Running next.config.ts took 21ms
+#22 0.545 
+#22 0.563   Creating an optimized production build ...
+#22 2.086 ✓ Compiled successfully in 1523ms
+#22 2.088   Running TypeScript ...
+#22 2.388   Finished TypeScript in 300ms ...
+#22 2.390   Collecting page data using 5 workers ...
+#22 2.709   Generating static pages using 5 workers (0/3) ...
+#22 3.123 ✓ Generating static pages using 5 workers (3/3) in 413ms
+#22 3.127   Finalizing page optimization ...
+#22 3.267 
+#22 3.268 Route (app)
+#22 3.268 ┌ ○ /
+#22 3.268 ├ ○ /_not-found
+#22 3.268 └ ƒ /runs/[id]
+#22 3.268 
+#22 3.268 
+#22 3.268 ○  (Static)   prerendered as static content
+#22 3.268 ƒ  (Dynamic)  server-rendered on demand
+#22 3.268 
+#22 DONE 3.3s
+
+#23 [web stage-1 3/4] COPY --from=build --chown=node:node /app/.next/standalone ./
+#23 DONE 0.2s
+
+#24 [web stage-1 4/4] COPY --from=build --chown=node:node /app/.next/static ./.next/static
+#24 DONE 0.0s
+
+#25 [web] exporting to image
+#25 exporting layers
+#25 exporting layers 1.7s done
+#25 exporting manifest sha256:68d9d8c8ff611c4e1f6bcdd191f90a13fac17670ee9322e20a7b49cf327c03a3 0.0s done
+#25 exporting config sha256:322d6f4a856261a60c938001ac2f2124f0a8759795ef42a1ebf7c556b72469e5 0.0s done
+#25 exporting attestation manifest sha256:82627219f7fbbb3e12531a87ab57f674af031b0d43df8d0a5159a08d0f82ad2b 0.0s done
+#25 exporting manifest list sha256:725fc549176c9e20a424c55b605835f71b18d3269f4ee9ac0ecccb15090f3442 0.0s done
+#25 naming to docker.io/library/soup-task-web:latest done
+#25 unpacking to docker.io/library/soup-task-web:latest
+#25 unpacking to docker.io/library/soup-task-web:latest 0.4s done
+#25 DONE 2.3s
+
+#26 [web] resolving provenance for metadata file
+#26 DONE 0.0s
+ soup-task-api  Built
+ soup-task-web  Built
+ Container soup-task-db-1  Running
+ Container soup-task-api-1  Recreate
+ Container soup-task-api-1  Recreated
+ Container soup-task-web-1  Creating
+ Container soup-task-web-1  Created
+ Container soup-task-db-1  Waiting
+ Container soup-task-db-1  Healthy
+ Container soup-task-api-1  Starting
+ Container soup-task-api-1  Started
+ Container soup-task-api-1  Waiting
+ Container soup-task-api-1  Healthy
+ Container soup-task-web-1  Starting
+ Container soup-task-web-1  Started
+ Container soup-task-api-1  Waiting
+ Container soup-task-web-1  Waiting
+ Container soup-task-db-1  Waiting
+ Container soup-task-db-1  Healthy
+ Container soup-task-api-1  Healthy
+ Container soup-task-web-1  Healthy
+EXIT_CODE=0

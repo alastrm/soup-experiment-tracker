@@ -1,0 +1,6 @@
+
+> soup-tracker@0.1.0 typecheck
+> tsc --noEmit
+
+tests/live.test.ts(24,41): error TS2339: Property 'value' does not exist on type 'Function'.
+EXIT_CODE=1

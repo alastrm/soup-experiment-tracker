@@ -1,0 +1,126 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 996B 0.0s done
+#1 DONE 0.0s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 530B 0.0s done
+#2 DONE 0.0s
+
+#3 [web internal] load build definition from Dockerfile
+#3 transferring dockerfile: 607B done
+#3 DONE 0.0s
+
+#4 [web internal] load metadata for docker.io/library/node:22.23.4-bookworm-slim
+#4 DONE 1.1s
+
+#5 [api internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#5 ...
+
+#6 [web internal] load .dockerignore
+#6 transferring context: 73B done
+#6 DONE 0.0s
+
+#7 [web build 1/6] FROM docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d
+#7 resolve docker.io/library/node:22.23.4-bookworm-slim@sha256:5ec23b7c622b00547753bc6ffd78085dd868a68aeb41c8e0a1418f033e13d96d 0.0s done
+#7 DONE 0.0s
+
+#8 [web internal] load build context
+#8 transferring context: 927B done
+#8 DONE 0.0s
+
+#9 [web build 4/6] RUN npm ci
+#9 CACHED
+
+#10 [web build 6/6] RUN npm run build
+#10 CACHED
+
+#11 [web build 2/6] WORKDIR /app
+#11 CACHED
+
+#12 [web build 5/6] COPY . .
+#12 CACHED
+
+#13 [web build 3/6] COPY package.json package-lock.json ./
+#13 CACHED
+
+#14 [web stage-1 3/4] COPY --from=build --chown=node:node /app/.next/standalone ./
+#14 CACHED
+
+#15 [web stage-1 4/4] COPY --from=build --chown=node:node /app/.next/static ./.next/static
+#15 CACHED
+
+#16 [web] exporting to image
+#16 exporting layers done
+#16 exporting manifest sha256:01d226b4b022b7220b465f2d50719c124fba9bbcf28cbdf126469655b1a421d5 done
+#16 exporting config sha256:7f5a8879e41fab729510f2cc3e0d9af1a92a7e5788475d71904fe7aafe1fdd7d done
+#16 exporting attestation manifest sha256:3ba7263d1aab6f9e9bea30fd7b2929392009955c8b74c4f833dad2181eff5d9a 0.0s done
+#16 exporting manifest list sha256:f543a34c8becb1e814d0f71f29b4061dfbacabdfddaa11233bdf4bc3d49388a2 0.0s done
+#16 naming to docker.io/library/soup-task-web:latest done
+#16 unpacking to docker.io/library/soup-task-web:latest done
+#16 DONE 0.1s
+
+#17 [web] resolving provenance for metadata file
+#17 DONE 0.0s
+
+#5 [api internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#5 DONE 1.6s
+
+#18 [api internal] load .dockerignore
+#18 transferring context: 78B 0.0s done
+#18 DONE 0.0s
+
+#19 [api 1/5] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#19 resolve docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.0s done
+#19 DONE 0.0s
+
+#20 [api internal] load build context
+#20 transferring context: 118.47kB 0.0s done
+#20 DONE 0.1s
+
+#21 [api 2/5] WORKDIR /app
+#21 CACHED
+
+#22 [api 3/5] COPY requirements.txt requirements-dev.txt constraints.txt ./
+#22 CACHED
+
+#23 [api 4/5] RUN pip install --no-cache-dir -r requirements-dev.txt -c constraints.txt     && useradd --create-home soup
+#23 CACHED
+
+#24 [api 5/5] COPY . .
+#24 DONE 0.0s
+
+#25 [api] exporting to image
+#25 exporting layers 0.1s done
+#25 exporting manifest sha256:c4a61c94f9ec726b0b5f2d62e4f605ae8b727e2f191ebb3d6909b0d1c8272348 done
+#25 exporting config sha256:b3a17a7c7432ac5ab032a65aea4904b3670de2132da1d954efb0658f56323597 done
+#25 exporting attestation manifest sha256:8c862bc52ce2836e68bd0f2e2826b50eb438f3c026d94b9c9304a3df0990b28f 0.0s done
+#25 exporting manifest list sha256:fcf95698b4184bc4933801202f53e47bd4a44c5627eefffb6f9a510395caeb0e
+#25 exporting manifest list sha256:fcf95698b4184bc4933801202f53e47bd4a44c5627eefffb6f9a510395caeb0e 0.0s done
+#25 naming to docker.io/library/soup-task-api:latest done
+#25 unpacking to docker.io/library/soup-task-api:latest 0.0s done
+#25 DONE 0.2s
+
+#26 [api] resolving provenance for metadata file
+#26 DONE 0.0s
+ soup-task-web  Built
+ soup-task-api  Built
+ Container soup-task-db-1  Running
+ Container soup-task-api-1  Recreate
+ Container soup-task-api-1  Recreated
+ Container soup-task-web-1  Recreate
+ Container soup-task-web-1  Recreated
+ Container soup-task-db-1  Waiting
+ Container soup-task-db-1  Healthy
+ Container soup-task-api-1  Starting
+ Container soup-task-api-1  Started
+ Container soup-task-api-1  Waiting
+ Container soup-task-api-1  Healthy
+ Container soup-task-web-1  Starting
+ Container soup-task-web-1  Started
+ Container soup-task-api-1  Waiting
+ Container soup-task-web-1  Waiting
+ Container soup-task-db-1  Waiting
+ Container soup-task-api-1  Healthy
+ Container soup-task-db-1  Healthy
+ Container soup-task-web-1  Healthy
+EXIT_CODE=0

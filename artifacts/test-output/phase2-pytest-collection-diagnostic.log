@@ -1,0 +1,32 @@
+backend/tests/test_backend.py::test_project_rotation_auth_and_run_listing
+backend/tests/test_backend.py::test_strict_project_isolation
+backend/tests/test_backend.py::test_batch_and_event_idempotency_conflicts_and_order
+backend/tests/test_backend.py::test_concurrent_batches_and_event_retries
+backend/tests/test_backend.py::test_concurrent_conflicting_batch_and_event
+backend/tests/test_backend.py::test_failure_rolls_back_events_counter_and_receipt[after_flush]
+backend/tests/test_backend.py::test_failure_rolls_back_events_counter_and_receipt[before_commit]
+backend/tests/test_backend.py::test_lost_receipt_survives_new_application_instance
+backend/tests/test_backend.py::test_snapshot_is_consistent_when_write_commits_between_queries
+backend/tests/test_backend.py::test_metric_cap_and_retry_at_cursor_cap
+backend/tests/test_backend.py::test_invalid_event_is_atomic[step--1]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[step-True]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[step-1]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[step-1.0]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[step-9007199254740992]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[value-True]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[value-1]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[value-None]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[metric-bad name]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[metric-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[metric-1invalid]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[event_id-not-a-uuid]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[event_id-00000000-0000-0000-0000-000000000000]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[occurred_at-2026-02-30T00:00:00Z]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[occurred_at-2026-01-01T00:00:00+00:00]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[occurred_at-1999-12-31T23:59:59Z]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[occurred_at-2100-01-01T00:00:00Z]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[occurred_at-2026-01-01T00:00:00.0000001Z]
+backend/tests/test_backend.py::test_invalid_event_is_atomic[project_id-53c515e1-ae04-4fd6-ba10-8d5d72bc64a7]
+backend/tests/test_backend.py::test_wire_limits_nonfinite_duplicate_keys_and_cors
+
+30 tests collected in 0.01s

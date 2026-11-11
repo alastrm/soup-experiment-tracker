@@ -1,0 +1,9 @@
+ Container soup-task-db-1  Running
+.......SECURITY timing probe foreign: n=12, min_ms=47.416, max_ms=53.219, mean_ms=49.687; no constant-time claim
+SECURITY timing probe missing: n=12, min_ms=47.758, max_ms=56.166, mean_ms=50.285; no constant-time claim
+.MULTIPROCESS: two independent Uvicorn processes, concurrent overlapping batches, gapless seq1-9 and original receipt PASS
+..TCP diagnostic: elapsed=5.025s, maximum_buffer=4240B, polled_pressure=False, slots=0
+SLOW TCP: one unread subscriber, server high-water4096B, max_observed_buffer=4240B, cleanup_seconds=5.025, RSS_baseline=95674368B, RSS_peak=95674368B; fixture1000 events, not a throughput/load test
+................................................
+58 passed in 27.19s
+EXIT_CODE=0

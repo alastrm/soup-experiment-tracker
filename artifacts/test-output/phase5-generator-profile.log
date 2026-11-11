@@ -1,0 +1,2222 @@
+START project=78c148eb-5cff-419b-b16c-018434a910e5 runs=50 rate=10 batch=5 warmup=2s measurement=5s SSE=0
+PROGRESS t=4.86s requests=161 unique_accepted=805 errors=0
+PROGRESS t=8.36s requests=272 unique_accepted=1360 errors=0
+{
+  "config": {
+    "api": "http://127.0.0.1:8000",
+    "runs": 50,
+    "rate": 10,
+    "batch_size": 5,
+    "warmup": 2,
+    "duration": 5,
+    "retry_every": 20,
+    "subscribers": 0,
+    "disconnect_seconds": 5,
+    "output": "artifacts/test-output/phase5-generator-profile"
+  },
+  "elapsed_workload_s": 8.364256300032139,
+  "generator_process_cpu_s": 7.96875,
+  "planned_unique_events": 3500,
+  "attempted_event_deliveries": 1360,
+  "unique_events_attempted": 1360,
+  "unique_events_accepted": 1360,
+  "failed_request_event_deliveries": 0,
+  "http_rejected_event_deliveries": 0,
+  "timeouts": 0,
+  "http_status_counts": {
+    "200": 272
+  },
+  "http_failure_count": 0,
+  "measurement_window_s": 5,
+  "measurement_window_unique_events": 695,
+  "measurement_window_events_per_s": 139.0,
+  "measurement_window_http_requests_per_s": 27.8,
+  "measurement_primary_cohort_events": 685,
+  "measurement_primary_cohort_latency": {
+    "p50_ms": 1271.088499983307,
+    "p95_ms": 3126.925080025102,
+    "p99_ms": 3704.9630839866577
+  },
+  "measurement_all_request_latency": {
+    "p50_ms": 1271.088499983307,
+    "p95_ms": 3126.925080025102,
+    "p99_ms": 3704.9630839866577
+  },
+  "controlled_retry_requests": 0,
+  "controlled_retry_latency": {
+    "p50_ms": null,
+    "p95_ms": null,
+    "p99_ms": null
+  },
+  "primary_schedule_lateness": {
+    "p50_ms": 269.9953000270758,
+    "p95_ms": 472.66126003907976,
+    "p99_ms": 494.22116001192484
+  },
+  "last_primary_completion_s": 8.362126599997282,
+  "protocol_errors": [
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 1,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 1,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 2,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 3,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 4,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 5,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 6,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 7,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 8,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 9,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 10,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 11,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 12,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "tick": 13,
+      "error": "pacing missed batch"
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "tick": 13,
+      "error": "pacing missed batch"
+    }
+  ],
+  "database_audit_passed": false,
+  "sse": {
+    "subscribers": 0,
+    "passed": true,
+    "cursors": [],
+    "errors": [],
+    "connections": [],
+    "disconnect": null
+  },
+  "resource_samples": 3,
+  "gates": {
+    "all_planned_events_acknowledged": false,
+    "no_http_failures": true,
+    "no_pacing_or_receipt_errors": false,
+    "throughput_at_least_99_percent_target": false,
+    "primary_p95_below_batch_interval": false,
+    "primary_p99_below_1s": false,
+    "postgres_audit": false,
+    "sse_replay": true
+  },
+  "passed": false
+}
+EXIT_CODE=1
+PROCESS_EXIT_CODE=0

@@ -1,0 +1,45 @@
+
+> soup-tracker@0.1.0 test
+> node --experimental-strip-types --test tests/*.test.ts
+
+TAP version 13
+# Subtest: snapshot summary + full chart replay, then missing 11–30 and duplicates
+ok 1 - snapshot summary + full chart replay, then missing 11–30 and duplicates
+  ---
+  duration_ms: 2.4707
+  type: 'test'
+  ...
+# Subtest: bounded chart history preserves full latest values
+ok 2 - bounded chart history preserves full latest values
+  ---
+  duration_ms: 8.7903
+  type: 'test'
+  ...
+# Subtest: valid metric names cannot collide with inherited object properties
+ok 3 - valid metric names cannot collide with inherited object properties
+  ---
+  duration_ms: 0.2627
+  type: 'test'
+  ...
+# Subtest: malformed metric payload never advances applied cursor
+ok 4 - malformed metric payload never advances applied cursor
+  ---
+  duration_ms: 0.1819
+  type: 'test'
+  ...
+# Subtest: SSE chunk boundaries, CRLF, comments, joined lines and bounded partial frame
+ok 5 - SSE chunk boundaries, CRLF, comments, joined lines and bounded partial frame
+  ---
+  duration_ms: 0.4666
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 120.6417
+EXIT_CODE=0

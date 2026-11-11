@@ -1,0 +1,1309 @@
+{
+  "passed": false,
+  "stored_events": 1360,
+  "stored_receipts": 272,
+  "runs": [
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "expected_events": 70,
+      "stored_events": 35,
+      "acknowledged_events": 35,
+      "last_seq": 35,
+      "receipts": 7,
+      "errors": [
+        {
+          "planned_missing": 35,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "expected_events": 70,
+      "stored_events": 35,
+      "acknowledged_events": 35,
+      "last_seq": 35,
+      "receipts": 7,
+      "errors": [
+        {
+          "planned_missing": 35,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "expected_events": 70,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": [
+        {
+          "planned_missing": 30,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "expected_events": 70,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": [
+        {
+          "planned_missing": 30,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "expected_events": 70,
+      "stored_events": 10,
+      "acknowledged_events": 10,
+      "last_seq": 10,
+      "receipts": 2,
+      "errors": [
+        {
+          "planned_missing": 60,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "expected_events": 70,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": [
+        {
+          "planned_missing": 30,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "expected_events": 70,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": [
+        {
+          "planned_missing": 30,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "expected_events": 70,
+      "stored_events": 15,
+      "acknowledged_events": 15,
+      "last_seq": 15,
+      "receipts": 3,
+      "errors": [
+        {
+          "planned_missing": 55,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "expected_events": 70,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": [
+        {
+          "planned_missing": 30,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "expected_events": 70,
+      "stored_events": 40,
+      "acknowledged_events": 40,
+      "last_seq": 40,
+      "receipts": 8,
+      "errors": [
+        {
+          "planned_missing": 30,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "expected_events": 70,
+      "stored_events": 35,
+      "acknowledged_events": 35,
+      "last_seq": 35,
+      "receipts": 7,
+      "errors": [
+        {
+          "planned_missing": 35,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "expected_events": 70,
+      "stored_events": 35,
+      "acknowledged_events": 35,
+      "last_seq": 35,
+      "receipts": 7,
+      "errors": [
+        {
+          "planned_missing": 35,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "expected_events": 70,
+      "stored_events": 30,
+      "acknowledged_events": 30,
+      "last_seq": 30,
+      "receipts": 6,
+      "errors": [
+        {
+          "planned_missing": 40,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "expected_events": 70,
+      "stored_events": 20,
+      "acknowledged_events": 20,
+      "last_seq": 20,
+      "receipts": 4,
+      "errors": [
+        {
+          "planned_missing": 50,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "expected_events": 70,
+      "stored_events": 25,
+      "acknowledged_events": 25,
+      "last_seq": 25,
+      "receipts": 5,
+      "errors": [
+        {
+          "planned_missing": 45,
+          "unexpected": 0
+        },
+        "receipt identities/count differ from planned batches"
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "bc6d9a6c-e6ac-4752-8877-23413f8d2131",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "error": {
+        "planned_missing": 35,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "584c7ea7-b3d7-4223-859a-5954912750f9",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "error": {
+        "planned_missing": 35,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "9f287361-0dcb-49ab-bedb-861f3165ffda",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "10c4a274-ae90-4b46-99e9-134b191cc3aa",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "6fbc852f-613f-437b-815e-4639d7871be5",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "6e33dbcc-71b5-4ebd-b7f2-89657464b326",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "d360e00e-4cb8-4b41-8310-9b07e157669c",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "253faf59-57f7-44ff-94bb-69187ba89feb",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "9bcb9706-1896-4152-bdea-7271a8ed0223",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "eb1ec10b-7361-43c3-8b69-83513df7da2a",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "error": {
+        "planned_missing": 30,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "55b3a95f-bdb4-4ccc-b0b0-b9e7852fd06f",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "84041bc8-5d43-4eaa-8121-c56a2196a206",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "c60d7c33-67b0-4111-8544-537fce508699",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "52dec67b-9523-4aef-9231-ee2aba970aef",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "error": {
+        "planned_missing": 30,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "41f3edcf-f3aa-49fb-ad07-2ee6c08b45fb",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "error": {
+        "planned_missing": 60,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "094bf662-2041-4668-920d-f065e6d0f511",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "error": {
+        "planned_missing": 30,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "de2179b8-d784-40c4-8650-8524579cf717",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "2ce1538b-ca97-4fa7-8107-744060cfd999",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "f8ef08af-2bae-4d8e-97bc-9765c66eea10",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "2dcbbd06-380d-49c0-bb36-411fab6b0937",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "error": {
+        "planned_missing": 30,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "f3497b9b-7949-454a-9299-87c1f119d53c",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "5b8582e7-8a21-4c61-adb6-9030592cb332",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "68128200-8aa1-4866-b6bc-9379359523bd",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "7846f341-1546-4ffb-9266-5d1f159abe60",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "error": {
+        "planned_missing": 55,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "b1226afa-4a19-4c8e-bf92-219d65b0dde4",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "e0dfd7c0-d896-458e-a4c3-6ffb65bca8f1",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "2404bf9d-4fc9-4124-bb0f-da1165475f3f",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "def2b3f2-9676-4744-ad1d-ea976320c7f8",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "eee7eeae-ab35-48f2-af27-7770a812f2a0",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "8a8746e6-7511-4ccb-adbb-e304a6a4d71c",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "067a528f-8d2a-4875-98b3-3b2d8dc7d102",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "00f2d623-4ef2-47ed-ba34-e2c869573cf1",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "0d784cbd-db8f-467f-afd5-a57db7b4e7eb",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "error": {
+        "planned_missing": 30,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "ef14ae7c-6636-431f-93b6-289e6695c7c3",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "2d3a0093-2b19-44db-9852-caaf7e6ebc42",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "be7dbcf3-6b39-44eb-ab6c-352912c8b8a1",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "b657e264-3496-428a-aa8e-645073c5b6b6",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "error": {
+        "planned_missing": 30,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "63d0b6d3-45aa-4071-9af6-228685b5e77c",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "a96e1e3a-a41c-4113-a65a-69c3cfc29b3e",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "59bed3f5-2561-40c5-be56-3d6fc7497011",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "be06fdb1-cbf7-4707-a630-559be492e8f7",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "error": {
+        "planned_missing": 35,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "2897e887-b738-4556-9df3-4a3cc2816a95",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "ff52ad6e-a380-4aa1-8e2c-9faba37af293",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "2fe1cf2a-71b4-41bb-b89f-afee1a20f449",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "9facb63b-f891-4322-a01f-7cc35c7846c0",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "error": {
+        "planned_missing": 35,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "28874fe1-2e66-4a83-9ccd-ffd4b3864718",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "57e11ca4-0ffb-492c-957f-4b068eeb4325",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "error": {
+        "planned_missing": 40,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "1252e5b7-c2ee-48b0-a964-c5cfb9733192",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "error": {
+        "planned_missing": 50,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "8e56dd67-948a-4f56-b261-b3e46d010218",
+      "error": "receipt identities/count differ from planned batches"
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "error": {
+        "planned_missing": 45,
+        "unexpected": 0
+      }
+    },
+    {
+      "run_id": "788c0d47-0e2c-456b-9233-512d6151d32c",
+      "error": "receipt identities/count differ from planned batches"
+    }
+  ]
+}

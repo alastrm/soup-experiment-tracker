@@ -1,0 +1,106 @@
+START project=8d3ae0b5-09d6-4c20-9cf0-2a990bfdbabb runs=2 rate=10 batch=5 warmup=1s measurement=3s SSE=2
+PROGRESS t=4.76s requests=22 unique_accepted=80 errors=0
+{
+  "config": {
+    "api": "http://127.0.0.1:8000",
+    "runs": 2,
+    "rate": 10,
+    "batch_size": 5,
+    "warmup": 1,
+    "duration": 3,
+    "retry_every": 2,
+    "subscribers": 2,
+    "disconnect_seconds": 1.0,
+    "output": "artifacts/test-output/phase5-calibration-01"
+  },
+  "elapsed_workload_s": 4.760514800029341,
+  "generator_process_cpu_s": 0.140625,
+  "planned_unique_events": 80,
+  "attempted_event_deliveries": 110,
+  "unique_events_attempted": 80,
+  "unique_events_accepted": 80,
+  "failed_request_event_deliveries": 0,
+  "http_rejected_event_deliveries": 0,
+  "timeouts": 0,
+  "http_status_counts": {
+    "200": 22
+  },
+  "http_failure_count": 0,
+  "measurement_window_s": 3,
+  "measurement_window_unique_events": 60,
+  "measurement_window_events_per_s": 20.0,
+  "measurement_window_http_requests_per_s": 6.0,
+  "measurement_primary_cohort_events": 60,
+  "measurement_primary_cohort_latency": {
+    "p50_ms": 21.66185001260601,
+    "p95_ms": 40.91898000624495,
+    "p99_ms": 50.652835979708485
+  },
+  "measurement_all_request_latency": {
+    "p50_ms": 18.98100003018044,
+    "p95_ms": 34.282260024338,
+    "p99_ms": 49.32549198332704
+  },
+  "controlled_retry_requests": 6,
+  "controlled_retry_latency": {
+    "p50_ms": 13.833399978466332,
+    "p95_ms": 23.73914999770932,
+    "p99_ms": 23.767350002890453
+  },
+  "primary_schedule_lateness": {
+    "p50_ms": 9.832250041654333,
+    "p95_ms": 20.13131501153111,
+    "p99_ms": 22.329863002523783
+  },
+  "last_primary_completion_s": 3.768484800006263,
+  "protocol_errors": [],
+  "database_audit_passed": true,
+  "sse": {
+    "subscribers": 2,
+    "passed": true,
+    "cursors": [
+      40,
+      40
+    ],
+    "errors": [],
+    "connections": [
+      {
+        "subscriber": 0,
+        "cursor": 0,
+        "at_s": -3599.9743973999866
+      },
+      {
+        "subscriber": 1,
+        "cursor": 0,
+        "at_s": -3599.9660036000423
+      },
+      {
+        "subscriber": 0,
+        "cursor": 25,
+        "at_s": 3.5956647000275552
+      }
+    ],
+    "disconnect": {
+      "cursor_before": 25,
+      "started_s": 2.5771536999964155,
+      "resumed_s": 3.587046400003601,
+      "cursor_sent": 25,
+      "final_cursor": 40,
+      "replayed_after_drop": 15
+    }
+  },
+  "resource_samples": 2,
+  "gates": {
+    "all_planned_events_acknowledged": true,
+    "no_http_failures": true,
+    "no_pacing_or_receipt_errors": true,
+    "throughput_at_least_99_percent_target": true,
+    "primary_p95_below_batch_interval": true,
+    "primary_p99_below_1s": true,
+    "postgres_audit": true,
+    "sse_replay": true
+  },
+  "passed": true
+}
+EXIT_CODE=0
+PROCESS_EXIT_CODE=0

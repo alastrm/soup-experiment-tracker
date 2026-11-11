@@ -1,0 +1,7 @@
+ Container soup-task-web-1  Stopping
+ Container soup-task-web-1  Stopped
+ Container soup-task-api-1  Stopping
+ Container soup-task-api-1  Stopped
+ Container soup-task-db-1  Stopping
+ Container soup-task-db-1  Stopped
+EXIT_CODE=0

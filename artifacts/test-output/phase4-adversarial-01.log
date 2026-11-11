@@ -1,0 +1,141 @@
+.....FFSECURITY timing probe foreign: n=12, min_ms=12.286, max_ms=21.514, mean_ms=16.246; no constant-time claim
+SECURITY timing probe missing: n=12, min_ms=10.873, max_ms=17.702, mean_ms=13.622; no constant-time claim
+.MULTIPROCESS: two independent Uvicorn processes, concurrent overlapping batches, gapless seq1-9 and original receipt PASS
+.
+================================== FAILURES ===================================
+___________________ test_exhausted_pool_fails_stream_closed ___________________
+
+client = <httpx.AsyncClient object at 0x0000024137148E00>
+db = <app.db.Database object at 0x0000024136ED8080>
+
+    async def test_exhausted_pool_fails_stream_closed(client, db):
+        _, auth, run = await setup_run(client)
+        async with db.transaction() as s: project=await services.authenticate(s,auth["Authorization"])
+        slots=StreamSlots(); connections=[]
+        try:
+            for _ in range(20): connections.append(await db.engine.connect())
+            messages=[]
+            async def send(message): messages.append(message)
+            async def receive(): await asyncio.Event().wait()
+            async with asyncio.timeout(2):
+>               await DurableSSE(db,slots,project,UUID(run),0)({"type":"http"},receive,send)
+
+backend\tests\test_adversarial.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\app\stream.py:126: in __call__
+    await asyncio.wait(tasks, return_when=asyncio.FIRST_COMPLETED)
+C:\Users\madi\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:464: in wait
+    return await _wait(fs, timeout, return_when, loop)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+fs = {<Task cancelled name='Task-147' coro=<DurableSSE.__call__.<locals>.disconnect() done, defined at C:\AGp\SoupTask\back...'Task-146' coro=<DurableSSE.__call__.<locals>.watch_key() done, defined at C:\AGp\SoupTask\backend\app\stream.py:103>>}
+timeout = None, return_when = 'FIRST_COMPLETED'
+loop = <ProactorEventLoop running=False closed=False debug=False>
+
+    async def _wait(fs, timeout, return_when, loop):
+        """Internal helper for wait().
+    
+        The fs argument must be a collection of Futures.
+        """
+        assert fs, 'Set of Futures is empty.'
+        waiter = loop.create_future()
+        timeout_handle = None
+        if timeout is not None:
+            timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        counter = len(fs)
+    
+        def _on_completion(f):
+            nonlocal counter
+            counter -= 1
+            if (counter <= 0 or
+                return_when == FIRST_COMPLETED or
+                return_when == FIRST_EXCEPTION and (not f.cancelled() and
+                                                    f.exception() is not None)):
+                if timeout_handle is not None:
+                    timeout_handle.cancel()
+                if not waiter.done():
+                    waiter.set_result(None)
+    
+        for f in fs:
+            f.add_done_callback(_on_completion)
+    
+        try:
+>           await waiter
+E           asyncio.exceptions.CancelledError
+
+C:\Users\madi\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:550: CancelledError
+
+The above exception was the direct cause of the following exception:
+
+client = <httpx.AsyncClient object at 0x0000024137148E00>
+db = <app.db.Database object at 0x0000024136ED8080>
+
+    async def test_exhausted_pool_fails_stream_closed(client, db):
+        _, auth, run = await setup_run(client)
+        async with db.transaction() as s: project=await services.authenticate(s,auth["Authorization"])
+        slots=StreamSlots(); connections=[]
+        try:
+            for _ in range(20): connections.append(await db.engine.connect())
+            messages=[]
+            async def send(message): messages.append(message)
+            async def receive(): await asyncio.Event().wait()
+>           async with asyncio.timeout(2):
+                       ^^^^^^^^^^^^^^^^^^
+
+backend\tests\test_adversarial.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Timeout [expired]>
+exc_type = <class 'asyncio.exceptions.CancelledError'>
+exc_val = CancelledError(), exc_tb = <traceback object at 0x0000024136EC4A00>
+
+    async def __aexit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[TracebackType],
+    ) -> Optional[bool]:
+        assert self._state in (_State.ENTERED, _State.EXPIRING)
+    
+        if self._timeout_handler is not None:
+            self._timeout_handler.cancel()
+            self._timeout_handler = None
+    
+        if self._state is _State.EXPIRING:
+            self._state = _State.EXPIRED
+    
+            if self._task.uncancel() <= self._cancelling and exc_type is exceptions.CancelledError:
+                # Since there are no new cancel requests, we're
+                # handling this.
+>               raise TimeoutError from exc_val
+E               TimeoutError
+
+C:\Users\madi\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py:115: TimeoutError
+_______________ test_failed_send_is_not_attempted_a_second_time _______________
+
+client = <httpx.AsyncClient object at 0x0000024137149E20>
+db = <app.db.Database object at 0x00000241371698B0>
+
+    async def test_failed_send_is_not_attempted_a_second_time(client, db):
+        _, auth, run = await setup_run(client)
+        await client.post(f"/runs/{run}/metrics",headers=auth,json=batch())
+        async with db.transaction() as s: project=await services.authenticate(s,auth["Authorization"])
+        slots=StreamSlots(); response=DurableSSE(db,slots,project,UUID(run),0)
+        response.send_timeout=0.05; attempts=0
+        async def send(message):
+            nonlocal attempts
+            if message["type"]=="http.response.body":
+                attempts+=1; await asyncio.Event().wait()
+        async def receive(): await asyncio.Event().wait()
+        await asyncio.wait_for(response({"type":"http"},receive,send),1)
+>       assert attempts==1, "A timed-out transport must be closed, not re-entered for EOF"
+E       AssertionError: A timed-out transport must be closed, not re-entered for EOF
+E       assert 2 == 1
+
+backend\tests\test_adversarial.py:150: AssertionError
+=========================== short test summary info ===========================
+FAILED backend\tests\test_adversarial.py::test_exhausted_pool_fails_stream_closed
+FAILED backend\tests\test_adversarial.py::test_failed_send_is_not_attempted_a_second_time
+2 failed, 7 passed in 15.74s
+EXIT_CODE=1

@@ -1,0 +1,47 @@
+PARTIAL FRAME: real server frame11 cut over TCP, browser retained10; replay11-30 -> exact SQL/UI points1-30 PASS
+.FCONCURRENT UI: overlapping duplicate events/out-of-order/equal steps, exact rows/seq/points vs SQL, old-key write denied/live revoked PASS
+.DB OUTAGE: actual Compose PostgreSQL stop/start, stream stale, failed ingress503, identical retry -> SQL/UI1-20 PASS
+.EMPTY RUN demo button:40 real persisted events,2 live charts, independent SQL/UI agreement PASS
+.BROWSER proof: applied1-10, disconnected, stored11-30, resumed cursor10 (forced duplicate10), applied exact1-30; late/equal-step SQL/UI agreement; live rotation and session isolation PASS
+.BROWSER API restart: persistent cursor10 -> gated real reconnect -> committed11-30 -> exact SQL/UI/point sequences1-30 PASS
+.BROWSER snapshot gap: snapshot20, committed21-80 before subscription, all80 recovered; dark desktop/mobile layout PASS
+.
+================================== FAILURES ===================================
+________ test_browser_old_project_frame_cannot_apply_after_key_switch _________
+
+browser_page = (<Page url='http://localhost:3000/runs/34a60853-60b4-40ed-8efd-3323732f9493'>, <BrowserContext browser=<Browser type=<...ecutable_path=C:\Users\madi\AppData\Local\ms-playwright\chromium-1254\chrome-win64\chrome.exe> version=158.0.8127.18>>)
+
+    async def test_browser_old_project_frame_cannot_apply_after_key_switch(browser_page):
+        page,_=browser_page
+        async with httpx.AsyncClient(base_url=API,timeout=10) as client:
+            a,auth_a,run_a=await create(client,"A private run")
+            b,auth_b,run_b=await create(client,"B private run")
+            await send(client,run_a,auth_a,batch([event(1)]))
+            await send(client,run_b,auth_b,batch([event(1,0.77,"onlyB")]))
+            relay=FrameRelay(API,run_a,hold_seq=2)
+            async with serve(relay) as (_,port):
+                await route_streams_through(page,port)
+                await page.goto(WEB);await connect(page,a["api_key"])
+                await page.get_by_role("link",name="A private run",exact=False).click()
+                await expect(page.get_by_test_id("connection-status")).to_have_text("connected")
+                await send(client,run_a,auth_a,batch([event(2,123456.789,"onlyA")]))
+                await asyncio.wait_for(relay.waiting.wait(),5)
+                await page.get_by_role("button",name="Switch project / key").click()
+                await connect(page,b["api_key"])
+                await expect(page.get_by_role("link",name="B private run",exact=False)).to_be_visible()
+                relay.gate.set()
+                await page.get_by_role("link",name="B private run",exact=False).click()
+                await expect(page.get_by_test_id("connection-status")).to_have_text("connected")
+                await expect(page.get_by_test_id("metric-onlyA")).to_have_count(0)
+                await expect(page.get_by_test_id("latest-onlyB")).to_have_text("0.77")
+                await check_sql_and_visible_points(page,run_b,1)
+                assert not await page.evaluate("Object.keys(localStorage).length+Object.keys(sessionStorage).length")
+>               assert all(secret not in json.dumps(await page.context.cookies()) for secret in (a["api_key"],b["api_key"]))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               TypeError: 'async_generator' object is not iterable
+
+e2e\test_adversarial_browser.py:61: TypeError
+=========================== short test summary info ===========================
+FAILED e2e/test_adversarial_browser.py::test_browser_old_project_frame_cannot_apply_after_key_switch
+1 failed, 7 passed in 35.82s
+EXIT_CODE=1

@@ -1,0 +1,97 @@
+{
+  "kind": "DERIVED ANALYSIS of raw requests/resources/SSE/SQL audit; not raw test output",
+  "source": "artifacts\\test-output\\phase5-baseline-02",
+  "measurement_10_second_buckets": [
+    {
+      "from_s": 10,
+      "to_s": 20,
+      "unique_events_per_s": 492.5,
+      "http_requests_per_s": 100.5
+    },
+    {
+      "from_s": 20,
+      "to_s": 30,
+      "unique_events_per_s": 499.0,
+      "http_requests_per_s": 105.1
+    },
+    {
+      "from_s": 30,
+      "to_s": 40,
+      "unique_events_per_s": 498.5,
+      "http_requests_per_s": 104.3
+    },
+    {
+      "from_s": 40,
+      "to_s": 50,
+      "unique_events_per_s": 500.5,
+      "http_requests_per_s": 105.5
+    },
+    {
+      "from_s": 50,
+      "to_s": 60,
+      "unique_events_per_s": 499.5,
+      "http_requests_per_s": 104.1
+    },
+    {
+      "from_s": 60,
+      "to_s": 70,
+      "unique_events_per_s": 503.5,
+      "http_requests_per_s": 107.1
+    }
+  ],
+  "primary_latency_halves": {
+    "first_half": {
+      "p50_ms": 39.38560001552105,
+      "p95_ms": 197.17323500954123,
+      "p99_ms": 276.18773996538954
+    },
+    "second_half": {
+      "p50_ms": 41.74709998187609,
+      "p95_ms": 214.52019501593895,
+      "p99_ms": 290.1471500209302
+    }
+  },
+  "resources": {
+    "soup-task-api-1": {
+      "samples": 19,
+      "cpu_percent_mean": 63.3821052631579,
+      "cpu_percent_p95": 91.99499999999999,
+      "cpu_percent_max": 93.57,
+      "memory_MiB_first": 86.66,
+      "memory_MiB_last": 89.84,
+      "memory_MiB_max": 101.7
+    },
+    "soup-task-db-1": {
+      "samples": 19,
+      "cpu_percent_mean": 17.380000000000003,
+      "cpu_percent_p95": 21.36300000000001,
+      "cpu_percent_max": 28.77,
+      "memory_MiB_first": 100.3,
+      "memory_MiB_last": 119.8,
+      "memory_MiB_max": 119.8
+    },
+    "soup-task-web-1": {
+      "samples": 19,
+      "cpu_percent_mean": 3.3984210526315786,
+      "cpu_percent_p95": 8.710000000000003,
+      "cpu_percent_max": 10.6,
+      "memory_MiB_first": 82.61,
+      "memory_MiB_last": 83.02,
+      "memory_MiB_max": 83.1
+    }
+  },
+  "docker_cpu_units": "100 percent = one logical CPU; can exceed 100",
+  "docker_memory_units": "Docker stats memory working-set estimate, not total OS/socket buffers",
+  "measurement_resource_samples": 19,
+  "postgres_observed_max": {
+    "connections": 10,
+    "active": 1,
+    "lock_waiters": 0,
+    "idle_in_transaction": 4
+  },
+  "postgres_monitor_connection_excluded": true,
+  "generator_cpu_percent_of_one_core": 62.997045085241275,
+  "acknowledged_but_missing_events": 0,
+  "planned_but_not_attempted_events": 0,
+  "sse_controlled_recovery": null
+}

@@ -1,0 +1,43 @@
+ Container soup-task-db-1  Running
+.......SECURITY timing probe foreign: n=12, min_ms=47.872, max_ms=55.898, mean_ms=49.665; no constant-time claim
+SECURITY timing probe missing: n=12, min_ms=47.875, max_ms=52.382, mean_ms=49.970; no constant-time claim
+.MULTIPROCESS: two independent Uvicorn processes, concurrent overlapping batches, gapless seq1-9 and original receipt PASS
+..F.............................................
+=================================== FAILURES ===================================
+________ test_real_tcp_slow_reader_buffers_deadline_and_complete_replay ________
+
+db = <app.db.Database object at 0x78287f1bcfe0>
+
+    async def test_real_tcp_slow_reader_buffers_deadline_and_complete_replay(db):
+        app=create_app(db); observed=SmallSocketBuffers(app)
+        async with serve(observed) as (client,port):
+            _,auth,run=await setup_run(client)
+            for _ in range(4):
+                assert (await client.post(f"/runs/{run}/metrics",headers=auth,json=batch(*(metric() for _ in range(250))))).status_code==200
+            sock=socket.socket();sock.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,1024);sock.setblocking(False)
+            await asyncio.get_running_loop().sock_connect(sock,("127.0.0.1",port))
+            reader,writer=await asyncio.open_connection(sock=sock,limit=1024)
+            try:
+                writer.write((f"GET /runs/{run}/events HTTP/1.1\r\nHost: 127.0.0.1\r\nAuthorization: {auth['Authorization']}\r\n\r\n").encode())
+                await writer.drain();await reader.readuntil(b"\r\n\r\n")
+                # Deliberately never read SSE bytes. Observe real Uvicorn/OS pressure.
+                start=time.monotonic(); saw_pressure=False
+                baseline=resident_bytes(); peak=baseline
+                async with asyncio.timeout(7):
+                    while app.state.streams.active:
+                        size=observed.transport.get_write_buffer_size()
+                        observed.maximum=max(observed.maximum,size)
+                        peak=max(peak,resident_bytes())
+                        saw_pressure |= size>4096
+                        await asyncio.sleep(0.02)
+                elapsed=time.monotonic()-start
+>               assert saw_pressure, "Test did not actually exercise socket backpressure"
+E               AssertionError: Test did not actually exercise socket backpressure
+E               assert False
+
+tests/test_adversarial.py:256: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_adversarial.py::test_real_tcp_slow_reader_buffers_deadline_and_complete_replay
+1 failed, 55 passed in 26.72s
+
+EXIT_CODE=1

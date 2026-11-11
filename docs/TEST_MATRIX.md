@@ -1,0 +1,41 @@
+# Verification matrix - evidence as of Phase 5
+
+Statuses describe the executed local scope, not universal security/correctness. Raw commands/results/failures and exact test names are in [EVIDENCE.md](EVIDENCE.md). Phase5 regression: Linux58, Chromium9, client5 pass. Local load verdict is scoped to the measured workload/environment and declared1% tolerance, not production readiness.
+
+| ID | Required scenario | Automated evidence | Status / limit |
+| --- | --- | --- | --- |
+| C1 | Exact batch retry | Original receipt/row counts; concurrent retries; live HTTP retry after restart | PASS |
+| C2 | Changed same-batch contents | Conflict409, unchanged DB, concurrent conflicting requests | PASS |
+| C3 | Same event across different batches | Identical event reuses seq; changed event conflicts/rolls back whole mixed batch | PASS |
+| C4 | Concurrent writers, late/out-of-order/equal steps | Two independent Uvicorn processes; overlapping batches/gapless rows; separate real-browser concurrency with independent SQL/chart-point comparison | PASS - composed experiments, not all possible schedules |
+| C5 | Actual UI/API/DB after duplicate/late input and interrupted stream | Browser1-10/disconnect/11-30 with duplicate10; late/equal-step assertions; real TCP frame11 cut before JSON terminator then replay11-30 | PASS - controlled faults; not every packet-loss pattern |
+| C6 | Snapshot-to-subscribe gap | TCP snapshot0->300 and browser snapshot20->80 | PASS |
+| C7 | Canonical identity and conflict races | JSON object order/whitespace/numeric/time normalization, array reorder conflict, duplicate IDs, concurrent batch/event tests | PASS - selected contract cases |
+| C8 | Consistent snapshot, late non-winning event | Commit between snapshot queries, old coherent H/winner; independent row count; empty snapshot and late count/cursor updates | PASS |
+| C9 | Cursor/parser bounds and reset | Malformed/ahead HTTP cursors, parser CRLF/split/partial/oversize, no advancement on gap/invalid payload; real browser partial-frame recovery | PARTIAL - backup-restore/ahead-cursor explicit UI reset and all decoder schedules not exercised |
+| I1 | Foreign read/list/guessed IDs | Known foreign and random UUIDs: identical404, no foreign listings | PASS |
+| I2 | Foreign write | REST negative requests, independent unchanged DB | PASS |
+| I3 | Foreign stream | Real TCP/HTTP denies before streaming; browser/API negative check | PASS |
+| I4 | Cached state, key switch and stale callbacks | Warm REST responses/no-store; real A frame held in TCP relay until switch to B, no A data; reload clears access | PASS - no external CDN/shared proxy cache deployed |
+| I5 | Rotation scope and ID bounds | Body project_id rejected; query project_id never selects B; A rotates, B key/version unchanged; foreign/missing policy equal | PASS |
+| I6 | FastAPI/browser boundary and key handling | Allowed/denied CORS/preflights independent of run existence; real SSR/cookies/local/sessionStorage and credential-log checks; source public URL/header-only auth review | PASS in current setup - not a dependency/supply-chain or exhaustive browser audit |
+| F1 | Partial writes, failed commit, cancellation | Kill actual PG backend after metric INSERT; deferred PG constraint fails COMMIT; cancel after flush; all events/receipt/counter rolled back and retry works | PASS checked outcomes; literal PostgreSQL commit-ACK packet cut not injected |
+| F2 | Slow subscriber, buffers/admission and replay | Unread TCP client, constrained socket buffers, actual transport/RSS observations, send5s cleanup, replay all1000; admission503/slot reuse with threshold2 (default100 verified) | PARTIAL - default network/proxy/100-client aggregate memory not measured; no throughput claim |
+| F3 | Old key during idle/backlog/blocked sends, DB/pool trouble | Normal TCP rotation terminal within2.5s test bound; replay table blocked independently of watcher; blocked send canceled; exhausted pool closes fail-closed; concurrent rotation/write tests | PASS tested schedules - no hard-real-time guarantee; buffered bytes cannot be recalled |
+| F4 | Duplicate after reconnect | Real server repeats10 on requested cursor9 while client applied10; exact1-30 UI/history/points | PASS |
+| F5 | Lost response, API restart and durable replay | Abort real HTTP response after successful commit; new app returns stored original receipt with no new rows; actual API restart browser recovery | PASS HTTP-level ambiguity/process restart; not disk-loss durability |
+| V1 | API bounds and generic errors | Existing strict schemas/API bounds/atomic validation and no-input-echo tests | PARTIAL - representative bounds, not exhaustive protocol fuzzing |
+| S1 | Errors, logs, timing and other side channels | Real API/web/DB logs credential scan, SSR/validation echo tests, identical404 body/private headers and 24 sequential timing samples | PARTIAL - no token echo observed; timing equivalence and absence of every metadata leak NOT PROVEN |
+| P1 | 50 runs x10 events/s, SHIP/DON'T SHIP | Python asyncio/httpx, batch5/0.5s/run; warmup10s + measurement60s; baseline and50 real SSE subscribers;300 exact retries each; independent SQL checks all35,000 events/7,000 receipts and50 snapshots each; reconnect400->455->700 | PASS local gates / scoped SHIP: measured498.92/498.17 events/s (not exactly500); declared1% tolerance, zero HTTP failures/missing acknowledged events/duplicates/gaps; initial generator-limited288.5/s failure preserved |
+
+## Required candid limits
+
+- Real PostgreSQL/HTTP/Chromium are used; TCP relays are ephemeral test fixtures, not product infrastructure. No mocked response body replaces the authoritative DB oracle.
+- Slow-reader test uses one subscriber and1000 fixture events solely to force backpressure. Server high-water4096B/client receive1024B are deliberate test settings, not claimed production defaults. RSS/transport maxima and timings in raw output are observations of that experiment only.
+- Admission test scales threshold to2 to verify overflow and reuse without a100-client capacity experiment; actual default remains100/process. Phase5 measured50 responsive subscribers with ingestion, not100 stalled subscribers. Aggregate OS/socket memory and cross-worker quotas remain unverified.
+- Ambiguous outcome is exercised by a real committed write followed by an aborted HTTP response. Byte-exact loss of PostgreSQL COMMIT acknowledgement would require a PG-protocol/TLS-aware fault point; it was not implemented or claimed. Definite precommit rollback and definite committed/no-client-receipt cases are both checked.
+- The outage test stops/starts the existing local PostgreSQL service with try/finally recovery; it does not destroy storage or alter committed demo data. No power/disk-loss/replica durability proof.
+- Generic foreign/missing responses match; local timing samples are not a proof of constant time. Operator-accessible PostgreSQL logs can contain SQL/identifiers/metric metadata. Shared load, bootstrap abuse, connection DoS and access to operator logs are not solved by API-key scoping.
+- Chromium is the exercised browser. Infinite retry/parser schedules, other browsers, external proxies/CDNs and malicious-server responses are not exhaustively verified.
+- Phase5 is two70s workloads, not a soak/capacity-ceiling test. API CPU/pool pressure increases with SSE; no claim of proven server saturation point or production headroom. Python SSE consumers do not measure50 browser renderers; Chromium regression separately checks the actual UI. Long-history bootstrap, WAN/TLS/proxies, disk faults and prolonged memory growth remain unverified at load.
+- Demo metrics remain explicitly generated samples. The original PDF requires consistency/isolation/failure evidence, not real ML training. The <=2-page note/surprise paragraph and final submission remain later deliverables.

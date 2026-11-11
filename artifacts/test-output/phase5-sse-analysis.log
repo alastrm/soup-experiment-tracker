@@ -1,0 +1,106 @@
+{
+  "kind": "DERIVED ANALYSIS of raw requests/resources/SSE/SQL audit; not raw test output",
+  "source": "artifacts\\test-output\\phase5-sse-01",
+  "measurement_10_second_buckets": [
+    {
+      "from_s": 10,
+      "to_s": 20,
+      "unique_events_per_s": 493.0,
+      "http_requests_per_s": 99.9
+    },
+    {
+      "from_s": 20,
+      "to_s": 30,
+      "unique_events_per_s": 501.0,
+      "http_requests_per_s": 105.6
+    },
+    {
+      "from_s": 30,
+      "to_s": 40,
+      "unique_events_per_s": 499.5,
+      "http_requests_per_s": 104.6
+    },
+    {
+      "from_s": 40,
+      "to_s": 50,
+      "unique_events_per_s": 498.5,
+      "http_requests_per_s": 104.5
+    },
+    {
+      "from_s": 50,
+      "to_s": 60,
+      "unique_events_per_s": 497.5,
+      "http_requests_per_s": 103.5
+    },
+    {
+      "from_s": 60,
+      "to_s": 70,
+      "unique_events_per_s": 499.5,
+      "http_requests_per_s": 105.3
+    }
+  ],
+  "primary_latency_halves": {
+    "first_half": {
+      "p50_ms": 91.26669997931458,
+      "p95_ms": 235.99647997180006,
+      "p99_ms": 302.6650959963447
+    },
+    "second_half": {
+      "p50_ms": 136.73485000617802,
+      "p95_ms": 353.7546449806542,
+      "p99_ms": 514.9779440078419
+    }
+  },
+  "resources": {
+    "soup-task-api-1": {
+      "samples": 19,
+      "cpu_percent_mean": 103.63473684210526,
+      "cpu_percent_p95": 119.48,
+      "cpu_percent_max": 120.2,
+      "memory_MiB_first": 95.21,
+      "memory_MiB_last": 101.9,
+      "memory_MiB_max": 115.0
+    },
+    "soup-task-db-1": {
+      "samples": 19,
+      "cpu_percent_mean": 34.27789473684211,
+      "cpu_percent_p95": 38.072,
+      "cpu_percent_max": 39.26,
+      "memory_MiB_first": 125.0,
+      "memory_MiB_last": 174.1,
+      "memory_MiB_max": 174.1
+    },
+    "soup-task-web-1": {
+      "samples": 19,
+      "cpu_percent_mean": 4.54421052631579,
+      "cpu_percent_p95": 8.465,
+      "cpu_percent_max": 8.6,
+      "memory_MiB_first": 83.68,
+      "memory_MiB_last": 83.97,
+      "memory_MiB_max": 98.58
+    }
+  },
+  "docker_cpu_units": "100 percent = one logical CPU; can exceed 100",
+  "docker_memory_units": "Docker stats memory working-set estimate, not total OS/socket buffers",
+  "measurement_resource_samples": 19,
+  "postgres_observed_max": {
+    "connections": 20,
+    "active": 6,
+    "lock_waiters": 0,
+    "idle_in_transaction": 17
+  },
+  "postgres_monitor_connection_excluded": true,
+  "generator_cpu_percent_of_one_core": 71.26626254245055,
+  "acknowledged_but_missing_events": 0,
+  "planned_but_not_attempted_events": 0,
+  "sse_controlled_recovery": {
+    "cursor_before": 400,
+    "last_acknowledged_seq_before_resume": 455,
+    "known_missed_events": 55,
+    "replayed_events": 55,
+    "replay_exact_range": true,
+    "seconds_disconnected": 5.033830999978818,
+    "seconds_to_apply_known_backlog_after_resume": 0.0956237000063993
+  }
+}
+EXIT_CODE=0

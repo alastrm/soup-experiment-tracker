@@ -1,0 +1,60 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 498B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 500B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#3 DONE 1.4s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 78B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#5 resolve docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 177.32kB 0.1s done
+#6 DONE 0.1s
+
+#7 [2/5] WORKDIR /app
+#7 CACHED
+
+#8 [3/5] COPY requirements.txt requirements-dev.txt constraints.txt ./
+#8 CACHED
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements-dev.txt -c constraints.txt     && useradd --create-home soup
+#9 CACHED
+
+#10 [5/5] COPY . .
+#10 DONE 0.0s
+
+#11 exporting to image
+#11 exporting layers 0.1s done
+#11 exporting manifest sha256:4d96965683c4eb1f1cd0dcc425329a357f3baf9aead68d6b29138fe86650d973 0.0s done
+#11 exporting config sha256:531ff37c6d5e7258d0457973b162c1477d62d2608c7b2a5786025fcf7230886a 0.0s done
+#11 exporting attestation manifest sha256:bde9c8be6e0cff37c2bf7feda629d2dabaca5d3a2dfd8154beee122da4c107bf 0.0s done
+#11 exporting manifest list sha256:6ac8b2ca25d6a5f81dbe8b4c1e171e548f519e6f1edeb24897d16f692fc9988d 0.0s done
+#11 naming to docker.io/library/soup-task-api:latest done
+#11 unpacking to docker.io/library/soup-task-api:latest 0.0s done
+#11 DONE 0.2s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ soup-task-api  Built
+ Container soup-task-db-1  Running
+ Container soup-task-api-1  Recreate
+ Container soup-task-api-1  Recreated
+ Container soup-task-db-1  Waiting
+ Container soup-task-db-1  Healthy
+ Container soup-task-api-1  Starting
+ Container soup-task-api-1  Started
+ Container soup-task-db-1  Waiting
+ Container soup-task-api-1  Waiting
+ Container soup-task-db-1  Healthy
+ Container soup-task-api-1  Healthy
+EXIT_CODE=0

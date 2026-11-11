@@ -1,0 +1,5 @@
+NAME              IMAGE                     COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+soup-task-api-1   soup-task-api             "sh -c 'alembic upgr…"   api       13 minutes ago   Up 2 minutes (healthy)    127.0.0.1:8000->8000/tcp
+soup-task-db-1    postgres:17.11-bookworm   "docker-entrypoint.s…"   db        15 hours ago     Up 2 minutes (healthy)    127.0.0.1:54329->5432/tcp
+soup-task-web-1   soup-task-web             "docker-entrypoint.s…"   web       13 minutes ago   Up 13 minutes (healthy)   127.0.0.1:3000->3000/tcp
+EXIT_CODE=0

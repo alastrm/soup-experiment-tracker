@@ -1,0 +1,5 @@
+KNOWN_HISTORICAL_MISSING_CAPTURES: [('EVIDENCE.md', '../artifacts/test-output/phase2-compile.log'), ('EVIDENCE.md', '../artifacts/test-output/phase2-compose-config.log')]
+phase5-baseline-02 all captures/source snapshot valid; all gates passed; 35000 stored; no acknowledged event missing
+phase5-sse-01 all captures/source snapshot valid; all gates passed; 35000 stored; no acknowledged event missing
+CURRENT_PHASE5_ARTIFACT_CHECK_PASS; two historical gaps remain explicitly unverified
+EXIT_CODE=0

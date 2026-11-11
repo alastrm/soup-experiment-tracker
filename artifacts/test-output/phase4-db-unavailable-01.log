@@ -1,0 +1,23 @@
+F
+================================== FAILURES ===================================
+__________ test_postgres_unreachable_is_retryable_not_internal_error __________
+
+database_url = 'postgresql+asyncpg://soup:soup_local_only@127.0.0.1:54329/soup_test'
+
+    async def test_postgres_unreachable_is_retryable_not_internal_error(database_url):
+        from sqlalchemy.engine import make_url
+        with socket.socket() as sock:
+            sock.bind(("127.0.0.1",0)); port=sock.getsockname()[1]
+        unavailable=Database(make_url(database_url).set(host="127.0.0.1",port=port).render_as_string(hide_password=False))
+        try:
+            async with serve(create_app(unavailable)) as (client,_):
+                r=await client.post("/projects",json={"name":"outage"})
+>               assert r.status_code==503 and r.headers.get("retry-after")=="1"
+E               assert (500 == 503)
+E                +  where 500 = <Response [500 Internal Server Error]>.status_code
+
+backend\tests\test_adversarial.py:293: AssertionError
+=========================== short test summary info ===========================
+FAILED backend\tests\test_adversarial.py::test_postgres_unreachable_is_retryable_not_internal_error
+1 failed in 4.09s
+EXIT_CODE=1

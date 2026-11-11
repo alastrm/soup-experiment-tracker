@@ -1,0 +1,7 @@
+.......SECURITY timing probe foreign: n=12, min_ms=21.171, max_ms=66.203, mean_ms=33.160; no constant-time claim
+SECURITY timing probe missing: n=12, min_ms=16.730, max_ms=58.333, mean_ms=33.644; no constant-time claim
+.MULTIPROCESS: two independent Uvicorn processes, concurrent overlapping batches, gapless seq1-9 and original receipt PASS
+..SLOW TCP: one unread subscriber, server high-water4096B, max_observed_buffer=4224B, cleanup_seconds=5.063; fixture1000 events, not a throughput/load test
+.............................................
+55 passed in 42.53s
+EXIT_CODE=0

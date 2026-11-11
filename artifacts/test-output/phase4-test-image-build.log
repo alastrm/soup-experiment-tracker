@@ -1,0 +1,49 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 498B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 530B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/python:3.12.16-slim-bookworm
+#3 DONE 1.1s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 78B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
+#5 resolve docker.io/library/python:3.12.16-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 20.95kB 0.0s done
+#6 DONE 0.0s
+
+#7 [2/5] WORKDIR /app
+#7 CACHED
+
+#8 [3/5] COPY requirements.txt requirements-dev.txt constraints.txt ./
+#8 CACHED
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements-dev.txt -c constraints.txt     && useradd --create-home soup
+#9 CACHED
+
+#10 [5/5] COPY . .
+#10 DONE 0.0s
+
+#11 exporting to image
+#11 exporting layers 0.1s done
+#11 exporting manifest sha256:dcaf5bacfc19711616c81ec1b33beb0f331e6dcdf4f82ca77e00ab4b7f71d184 0.0s done
+#11 exporting config sha256:7ec40c3abc83e089c836329be53d50e3700a29e9e7581df2ecd2d8b54936c585 0.0s done
+#11 exporting attestation manifest sha256:b9d188f59d7c15f71b08498334b587dfe5b9ea81e422f0cffd1e8dd7e3b4a51b
+#11 exporting attestation manifest sha256:b9d188f59d7c15f71b08498334b587dfe5b9ea81e422f0cffd1e8dd7e3b4a51b 0.0s done
+#11 exporting manifest list sha256:0f7f57e8ce70b667fbe3f280d0a8fcbd7210463527a5ddc9ea818bba02d78426 0.0s done
+#11 naming to docker.io/library/soup-task-api:latest done
+#11 unpacking to docker.io/library/soup-task-api:latest 0.0s done
+#11 DONE 0.2s
+
+#12 resolving provenance for metadata file
+#12 DONE 0.0s
+ soup-task-api  Built

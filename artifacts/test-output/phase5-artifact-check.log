@@ -1,0 +1,7 @@
+phase5-baseline-02 source snapshot/current generator equal; recorded gates pass; no missing acknowledged events
+phase5-sse-01 source snapshot/current generator equal; recorded gates pass; no missing acknowledged events
+MISSING_LOCAL_DOCUMENT_LINKS [('docs\\EVIDENCE.md', '../artifacts/test-output/phase2-compile.log'), ('docs\\EVIDENCE.md', '../artifacts/test-output/phase2-compose-config.log')]
+Traceback (most recent call last):
+  File "<stdin>", line 17, in <module>
+AssertionError
+EXIT_CODE=1

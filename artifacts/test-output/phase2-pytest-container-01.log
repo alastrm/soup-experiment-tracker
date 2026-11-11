@@ -1,0 +1,210 @@
+ Container soup-task-db-1  Running
+.FFFFFFFFF....................                                           [100%]
+=================================== FAILURES ===================================
+________________________ test_strict_project_isolation _________________________
+
+client = <httpx.AsyncClient object at 0x7c3577127dd0>
+db = <app.db.Database object at 0x7c35770ad340>
+
+    async def test_strict_project_isolation(client, db):
+        _, auth_a, run_a = await setup_run(client, "A")
+        _, auth_b, run_b = await setup_run(client, "B")
+        body = batch()
+>       assert (await client.post(f"/runs/{run_b}/metrics", json=body, headers=auth_b)).status_code == 200
+E       assert 503 == 200
+E        +  where 503 = <Response [503 Service Unavailable]>.status_code
+
+tests/test_backend.py:72: AssertionError
+_____________ test_batch_and_event_idempotency_conflicts_and_order _____________
+
+client = <httpx.AsyncClient object at 0x7c3577131820>
+db = <app.db.Database object at 0x7c357712fec0>
+
+    async def test_batch_and_event_idempotency_conflicts_and_order(client, db):
+        _, auth, run = await setup_run(client)
+        original = batch(metric(step=5, value=50), metric(step=2, value=20))
+        url = f"/runs/{run}/metrics"
+        receipt = await client.post(url, json=original, headers=auth)
+>       assert receipt.status_code == 200, receipt.text
+E       AssertionError: {"error":{"code":"temporarily_unavailable","message":"Service temporarily unavailable."}}
+E       assert 503 == 200
+E        +  where 503 = <Response [503 Service Unavailable]>.status_code
+
+tests/test_backend.py:97: AssertionError
+__________________ test_concurrent_batches_and_event_retries ___________________
+
+client = <httpx.AsyncClient object at 0x7c3576fbede0>
+db = <app.db.Database object at 0x7c3576fc42c0>
+
+    async def test_concurrent_batches_and_event_retries(client, db):
+        _, auth, run = await setup_run(client)
+        url = f"/runs/{run}/metrics"
+        original = batch(metric(), metric())
+        results = await asyncio.gather(*(client.post(url, json=original, headers=auth) for _ in range(8)))
+>       assert all(r.status_code == 200 for r in results)
+E       assert False
+E        +  where False = all(<generator object test_concurrent_batches_and_event_retries.<locals>.<genexpr> at 0x7c3576f09cb0>)
+
+tests/test_backend.py:127: AssertionError
+_________________ test_concurrent_conflicting_batch_and_event __________________
+
+client = <httpx.AsyncClient object at 0x7c3576f9c230>
+db = <app.db.Database object at 0x7c3576f9f800>
+
+    async def test_concurrent_conflicting_batch_and_event(client, db):
+        _, auth, run = await setup_run(client)
+        url = f"/runs/{run}/metrics"
+        one = batch()
+        two = copy.deepcopy(one)
+        two["events"][0]["value"] = 2
+        results = await asyncio.gather(*(client.post(url, json=b, headers=auth) for b in (one, two)))
+>       assert sorted(r.status_code for r in results) == [200, 409]
+E       assert [503, 503] == [200, 409]
+E         
+E         At index 0 diff: 503 != 200
+E         Use -v to get more diff
+
+tests/test_backend.py:147: AssertionError
+_______ test_failure_rolls_back_events_counter_and_receipt[after_flush] ________
+
+client = <httpx.AsyncClient object at 0x7c3577128740>
+db = <app.db.Database object at 0x7c3576e930b0>, failure_stage = 'after_flush'
+
+    @pytest.mark.parametrize("failure_stage", ["after_flush", "before_commit"])
+    async def test_failure_rolls_back_events_counter_and_receipt(client, db, failure_stage):
+        _, auth, run = await setup_run(client)
+        body = batch(metric(), metric())
+    
+        def fail(session, *args):
+            if any(isinstance(obj, Batch) for obj in list(session.new) + list(session.identity_map.values())):
+                raise RuntimeError("injected persistence failure")
+    
+        # after_flush observes inserted rows, changed counter and receipt in the same tx.
+        target = AsyncSession.sync_session_class
+        sa_event.listen(target, failure_stage, fail)
+        try:
+            response = await client.post(f"/runs/{run}/metrics", json=body, headers=auth)
+        finally:
+            sa_event.remove(target, failure_stage, fail)
+>       assert response.status_code == 500
+E       assert 503 == 500
+E        +  where 503 = <Response [503 Service Unavailable]>.status_code
+
+tests/test_backend.py:171: AssertionError
+______ test_failure_rolls_back_events_counter_and_receipt[before_commit] _______
+
+client = <httpx.AsyncClient object at 0x7c3576e18b60>
+db = <app.db.Database object at 0x7c3576ef2f30>, failure_stage = 'before_commit'
+
+    @pytest.mark.parametrize("failure_stage", ["after_flush", "before_commit"])
+    async def test_failure_rolls_back_events_counter_and_receipt(client, db, failure_stage):
+        _, auth, run = await setup_run(client)
+        body = batch(metric(), metric())
+    
+        def fail(session, *args):
+            if any(isinstance(obj, Batch) for obj in list(session.new) + list(session.identity_map.values())):
+                raise RuntimeError("injected persistence failure")
+    
+        # after_flush observes inserted rows, changed counter and receipt in the same tx.
+        target = AsyncSession.sync_session_class
+        sa_event.listen(target, failure_stage, fail)
+        try:
+            response = await client.post(f"/runs/{run}/metrics", json=body, headers=auth)
+        finally:
+            sa_event.remove(target, failure_stage, fail)
+>       assert response.status_code == 500
+E       assert 503 == 500
+E        +  where 503 = <Response [503 Service Unavailable]>.status_code
+
+tests/test_backend.py:171: AssertionError
+_____________ test_lost_receipt_survives_new_application_instance ______________
+
+client = <httpx.AsyncClient object at 0x7c3577128890>
+db = <app.db.Database object at 0x7c3576f93470>
+
+    async def test_lost_receipt_survives_new_application_instance(client, db):
+        from httpx import ASGITransport, AsyncClient
+        from app.db import Database
+        from app.main import create_app
+        _, auth, run = await setup_run(client)
+        body = batch()
+        original = await client.post(f"/runs/{run}/metrics", json=body, headers=auth)
+        # Simulate a lost response/new process state using an independent engine/app.
+        other = Database(str(db.engine.url.render_as_string(hide_password=False)))
+        try:
+            async with AsyncClient(transport=ASGITransport(app=create_app(other)), base_url="http://new") as fresh:
+                replay = await fresh.post(f"/runs/{run}/metrics", json=body, headers=auth)
+>           assert replay.json() == original.json() and await counts(db, run) == (1, 1, 1)
+E           AssertionError: assert ({'error': {'c...navailable.'}} == {'error': {'c...navailable.'}}
+E             
+E             Omitting 1 identical items, use -vv to show
+E             Use -v to get more diff and (0, 0, 0) == (1, 1, 1)
+E             
+E             At index 0 diff: 0 != 1
+E             Use -v to get more diff)
+
+tests/test_backend.py:189: AssertionError
+________ test_snapshot_is_consistent_when_write_commits_between_queries ________
+
+client = <httpx.AsyncClient object at 0x7c3576e41430>
+db = <app.db.Database object at 0x7c3576e61f40>
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c3576e4eab0>
+
+    async def test_snapshot_is_consistent_when_write_commits_between_queries(client, db, monkeypatch):
+        _, auth, run = await setup_run(client)
+        await client.post(f"/runs/{run}/metrics", json=batch(metric(value=1)), headers=auth)
+        saved_scoped_run = services.scoped_run
+    
+        async def write_after_run_read(session, project_id, run_id, *, lock=False):
+            result = await saved_scoped_run(session, project_id, run_id, lock=lock)
+            if not lock:
+                async with db.transaction() as writer:
+                    await services.ingest(writer, auth["Authorization"], run_id,
+                                          BatchRequest.model_validate(batch(metric(step=10, value=10))))
+            return result
+    
+        monkeypatch.setattr(services, "scoped_run", write_after_run_read)
+        snapshot = (await client.get(f"/runs/{run}", headers=auth)).json()
+>       assert snapshot["last_seq"] == snapshot["event_count"] == 1
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'last_seq'
+
+tests/test_backend.py:209: KeyError
+___________________ test_metric_cap_and_retry_at_cursor_cap ____________________
+
+client = <httpx.AsyncClient object at 0x7c357547a330>
+db = <app.db.Database object at 0x7c3576e76ff0>
+
+    async def test_metric_cap_and_retry_at_cursor_cap(client, db):
+        _, auth, run = await setup_run(client)
+        url = f"/runs/{run}/metrics"
+        body = batch(*(metric(name=f"metric_{i}") for i in range(128)))
+        receipt = await client.post(url, json=body, headers=auth)
+>       assert receipt.status_code == 200
+E       assert 503 == 200
+E        +  where 503 = <Response [503 Service Unavailable]>.status_code
+
+tests/test_backend.py:219: AssertionError
+=============================== warnings summary ===============================
+../usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:487
+  /usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:487: PytestCacheWarning: could not create cache path /app/.pytest_cache/v/cache/nodeids: [Errno 13] Permission denied: '/app/pytest-cache-files-kj5fhclz'
+    config.cache.set("cache/nodeids", sorted(str(n) for n in self.cached_nodeids))
+
+../usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:439
+  /usr/local/lib/python3.12/site-packages/_pytest/cacheprovider.py:439: PytestCacheWarning: could not create cache path /app/.pytest_cache/v/cache/lastfailed: [Errno 13] Permission denied: '/app/pytest-cache-files-9ngkbjxh'
+    config.cache.set("cache/lastfailed", current_lastfailed)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_backend.py::test_strict_project_isolation - assert 503 == 200
+FAILED tests/test_backend.py::test_batch_and_event_idempotency_conflicts_and_order
+FAILED tests/test_backend.py::test_concurrent_batches_and_event_retries - ass...
+FAILED tests/test_backend.py::test_concurrent_conflicting_batch_and_event - a...
+FAILED tests/test_backend.py::test_failure_rolls_back_events_counter_and_receipt[after_flush]
+FAILED tests/test_backend.py::test_failure_rolls_back_events_counter_and_receipt[before_commit]
+FAILED tests/test_backend.py::test_lost_receipt_survives_new_application_instance
+FAILED tests/test_backend.py::test_snapshot_is_consistent_when_write_commits_between_queries
+FAILED tests/test_backend.py::test_metric_cap_and_retry_at_cursor_cap - asser...
+9 failed, 21 passed, 2 warnings in 2.36s
+
+EXIT_CODE=1

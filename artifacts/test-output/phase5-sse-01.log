@@ -1,0 +1,462 @@
+START project=c5076a8a-4bfb-4fe8-8784-346872564b9f runs=50 rate=10 batch=5 warmup=10s measurement=60s SSE=50
+PROGRESS t=4.75s requests=464 unique_accepted=2320 errors=0
+PROGRESS t=9.75s requests=964 unique_accepted=4820 errors=0
+PROGRESS t=14.75s requests=1463 unique_accepted=7315 errors=0
+PROGRESS t=19.74s requests=1963 unique_accepted=9805 errors=0
+PROGRESS t=24.74s requests=2513 unique_accepted=12315 errors=0
+PROGRESS t=29.75s requests=3015 unique_accepted=14815 errors=0
+PROGRESS t=34.75s requests=3565 unique_accepted=17325 errors=0
+PROGRESS t=39.75s requests=4066 unique_accepted=19815 errors=0
+PROGRESS t=44.75s requests=4613 unique_accepted=22315 errors=0
+PROGRESS t=49.77s requests=5112 unique_accepted=24805 errors=0
+PROGRESS t=54.77s requests=5664 unique_accepted=27320 errors=0
+PROGRESS t=59.78s requests=6156 unique_accepted=29780 errors=0
+PROGRESS t=64.78s requests=6714 unique_accepted=32320 errors=0
+PROGRESS t=69.79s requests=7211 unique_accepted=34805 errors=0
+PROGRESS t=70.54s requests=7300 unique_accepted=35000 errors=0
+{
+  "config": {
+    "api": "http://127.0.0.1:8000",
+    "runs": 50,
+    "rate": 10,
+    "batch_size": 5,
+    "warmup": 10,
+    "duration": 60,
+    "retry_every": 20,
+    "subscribers": 50,
+    "disconnect_seconds": 5,
+    "output": "artifacts/test-output/phase5-sse-01"
+  },
+  "elapsed_workload_s": 70.6198462000466,
+  "generator_process_cpu_s": 50.328125,
+  "planned_unique_events": 35000,
+  "attempted_event_deliveries": 36500,
+  "unique_events_attempted": 35000,
+  "unique_events_accepted": 35000,
+  "failed_request_event_deliveries": 0,
+  "http_rejected_event_deliveries": 0,
+  "timeouts": 0,
+  "http_status_counts": {
+    "200": 7300
+  },
+  "http_failure_count": 0,
+  "measurement_window_s": 60,
+  "measurement_window_unique_events": 29890,
+  "measurement_window_events_per_s": 498.1666666666667,
+  "measurement_window_http_requests_per_s": 103.9,
+  "measurement_primary_cohort_events": 30000,
+  "measurement_primary_cohort_latency": {
+    "p50_ms": 109.47139997733757,
+    "p95_ms": 309.6313099900726,
+    "p99_ms": 438.63067500875496
+  },
+  "measurement_all_request_latency": {
+    "p50_ms": 114.51555002713576,
+    "p95_ms": 319.31444495567126,
+    "p99_ms": 446.01845598372176
+  },
+  "controlled_retry_requests": 300,
+  "controlled_retry_latency": {
+    "p50_ms": 227.89530002046376,
+    "p95_ms": 371.6680499899667,
+    "p99_ms": 446.5165810135659
+  },
+  "primary_schedule_lateness": {
+    "p50_ms": -6.988899989519126,
+    "p95_ms": 41.358025023480494,
+    "p99_ms": 134.45830901956407
+  },
+  "last_primary_completion_s": 70.48107710003387,
+  "protocol_errors": {
+    "count": 0,
+    "details": "summary.json"
+  },
+  "database_audit_passed": true,
+  "sse": {
+    "subscribers": 50,
+    "passed": true,
+    "cursors": [
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700,
+      700
+    ],
+    "errors": [],
+    "connections": [
+      {
+        "subscriber": 2,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 1,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 4,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 7,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 3,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 5,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 6,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 9,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 0,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 8,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 13,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 10,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 14,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 15,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 18,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 16,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 19,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 11,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 12,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 17,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 20,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 24,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 23,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 25,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 21,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 26,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 27,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 28,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 22,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 29,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 30,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 31,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 33,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 35,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 36,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 34,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 40,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 37,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 42,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 41,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 32,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 39,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 44,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 38,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 43,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 46,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 45,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 48,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 47,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 49,
+        "cursor": 0,
+        "at_s": null,
+        "before_workload": true
+      },
+      {
+        "subscriber": 0,
+        "cursor": 400,
+        "at_s": 45.52272850001464,
+        "before_workload": false
+      }
+    ],
+    "disconnect": {
+      "cursor_before": 400,
+      "started_s": 40.429975200037006,
+      "resumed_s": 45.463806200015824,
+      "cursor_sent": 400,
+      "final_cursor": 700,
+      "replayed_after_drop": 300
+    }
+  },
+  "resource_samples": 24,
+  "gates": {
+    "all_planned_events_acknowledged": true,
+    "no_http_failures": true,
+    "no_pacing_or_receipt_errors": true,
+    "throughput_at_least_99_percent_target": true,
+    "primary_p95_below_batch_interval": true,
+    "primary_p99_below_1s": true,
+    "postgres_audit": true,
+    "sse_replay": true
+  },
+  "passed": true
+}
+EXIT_CODE=0
+PROCESS_EXIT_CODE=0

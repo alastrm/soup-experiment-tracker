@@ -1,0 +1,104 @@
+F
+================================== FAILURES ===================================
+_______ test_real_tcp_slow_reader_buffers_deadline_and_complete_replay ________
+
+db = <app.db.Database object at 0x000002392E107530>
+
+    async def test_real_tcp_slow_reader_buffers_deadline_and_complete_replay(db):
+        app=create_app(db); observed=SmallSocketBuffers(app)
+        async with serve(observed) as (client,port):
+            _,auth,run=await setup_run(client)
+            for _ in range(4):
+                assert (await client.post(f"/runs/{run}/metrics",headers=auth,json=batch(*(metric() for _ in range(250))))).status_code==200
+            sock=socket.socket();sock.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,1024);sock.setblocking(False)
+            await asyncio.get_running_loop().sock_connect(sock,("127.0.0.1",port))
+            reader,writer=await asyncio.open_connection(sock=sock,limit=1024)
+            try:
+                writer.write((f"GET /runs/{run}/events HTTP/1.1\r\nHost: 127.0.0.1\r\nAuthorization: {auth['Authorization']}\r\n\r\n").encode())
+                await writer.drain();await reader.readuntil(b"\r\n\r\n")
+                # Deliberately never read SSE bytes. Observe real Uvicorn/OS pressure.
+                start=time.monotonic(); saw_pressure=False
+                async with asyncio.timeout(7):
+                    while app.state.streams.active:
+                        size=observed.transport.get_write_buffer_size()
+                        observed.maximum=max(observed.maximum,size)
+                        saw_pressure |= size>4096
+>                       await asyncio.sleep(0.02)
+
+backend\tests\test_adversarial.py:250: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+delay = 0.02, result = None
+
+    async def sleep(delay, result=None):
+        """Coroutine that completes after a given time (in seconds)."""
+        if delay <= 0:
+            await __sleep0()
+            return result
+    
+        loop = events.get_running_loop()
+        future = loop.create_future()
+        h = loop.call_later(delay,
+                            futures._set_result_unless_cancelled,
+                            future, result)
+        try:
+>           return await future
+                   ^^^^^^^^^^^^
+E           asyncio.exceptions.CancelledError
+
+C:\Users\madi\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py:665: CancelledError
+
+The above exception was the direct cause of the following exception:
+
+db = <app.db.Database object at 0x000002392E107530>
+
+    async def test_real_tcp_slow_reader_buffers_deadline_and_complete_replay(db):
+        app=create_app(db); observed=SmallSocketBuffers(app)
+        async with serve(observed) as (client,port):
+            _,auth,run=await setup_run(client)
+            for _ in range(4):
+                assert (await client.post(f"/runs/{run}/metrics",headers=auth,json=batch(*(metric() for _ in range(250))))).status_code==200
+            sock=socket.socket();sock.setsockopt(socket.SOL_SOCKET,socket.SO_RCVBUF,1024);sock.setblocking(False)
+            await asyncio.get_running_loop().sock_connect(sock,("127.0.0.1",port))
+            reader,writer=await asyncio.open_connection(sock=sock,limit=1024)
+            try:
+                writer.write((f"GET /runs/{run}/events HTTP/1.1\r\nHost: 127.0.0.1\r\nAuthorization: {auth['Authorization']}\r\n\r\n").encode())
+                await writer.drain();await reader.readuntil(b"\r\n\r\n")
+                # Deliberately never read SSE bytes. Observe real Uvicorn/OS pressure.
+                start=time.monotonic(); saw_pressure=False
+>               async with asyncio.timeout(7):
+                           ^^^^^^^^^^^^^^^^^^
+
+backend\tests\test_adversarial.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Timeout [expired]>
+exc_type = <class 'asyncio.exceptions.CancelledError'>
+exc_val = CancelledError(), exc_tb = <traceback object at 0x000002392E64B900>
+
+    async def __aexit__(
+        self,
+        exc_type: Optional[Type[BaseException]],
+        exc_val: Optional[BaseException],
+        exc_tb: Optional[TracebackType],
+    ) -> Optional[bool]:
+        assert self._state in (_State.ENTERED, _State.EXPIRING)
+    
+        if self._timeout_handler is not None:
+            self._timeout_handler.cancel()
+            self._timeout_handler = None
+    
+        if self._state is _State.EXPIRING:
+            self._state = _State.EXPIRED
+    
+            if self._task.uncancel() <= self._cancelling and exc_type is exceptions.CancelledError:
+                # Since there are no new cancel requests, we're
+                # handling this.
+>               raise TimeoutError from exc_val
+E               TimeoutError
+
+C:\Users\madi\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py:115: TimeoutError
+=========================== short test summary info ===========================
+FAILED backend\tests\test_adversarial.py::test_real_tcp_slow_reader_buffers_deadline_and_complete_replay
+1 failed in 9.58s
+EXIT_CODE=1

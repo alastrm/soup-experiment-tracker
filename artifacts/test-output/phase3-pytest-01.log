@@ -1,0 +1,47 @@
+.......................................F..                               [100%]
+================================== FAILURES ===================================
+________________ test_rotation_terminates_existing_idle_stream ________________
+
+live_api = (<httpx.AsyncClient object at 0x000002C55F6FC500>, <app.main.ResponsePolicy object at 0x000002C55F720410>)
+
+    async def test_rotation_terminates_existing_idle_stream(live_api):
+        client, _ = live_api
+        _, auth, run = await setup_run(client)
+        async with client.stream("GET", f"/runs/{run}/events", headers=auth) as response:
+            await frames_until(response)
+            loop = asyncio.get_running_loop()
+            rotation = await client.post("/projects/key/rotate", json={}, headers=auth)
+            start = loop.time()
+            async with asyncio.timeout(2.5):
+>               terminal = await frames_until(response,"auth_expired")
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+backend\tests\test_stream.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+backend\tests\test_stream.py:37: in frames_until
+    async for line in response.aiter_lines():
+.venv\Lib\site-packages\httpx\_models.py:1031: in aiter_lines
+    async for text in self.aiter_text():
+.venv\Lib\site-packages\httpx\_models.py:1018: in aiter_text
+    async for byte_content in self.aiter_bytes():
+.venv\Lib\site-packages\httpx\_models.py:997: in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <Response [200 OK]>, chunk_size = None
+
+    async def aiter_raw(
+        self, chunk_size: int | None = None
+    ) -> typing.AsyncIterator[bytes]:
+        """
+        A byte-iterator over the raw response content.
+        """
+        if self.is_stream_consumed:
+>           raise StreamConsumed()
+E           httpx.StreamConsumed: Attempted to read or stream some content, but the content has already been streamed. For requests, this could be due to passing a generator as request content, and then receiving a redirect response or a secondary request as part of an authentication flow.For responses, this could be due to attempting to stream the response content more than once.
+
+.venv\Lib\site-packages\httpx\_models.py:1044: StreamConsumed
+=========================== short test summary info ===========================
+FAILED backend/tests/test_stream.py::test_rotation_terminates_existing_idle_stream
+1 failed, 41 passed in 10.11s
+EXIT_CODE=1

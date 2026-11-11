@@ -1,0 +1,76 @@
+{
+  "config": {
+    "api": "http://127.0.0.1:8000",
+    "runs": 50,
+    "rate": 10,
+    "batch_size": 5,
+    "warmup": 2,
+    "duration": 5,
+    "retry_every": 5,
+    "subscribers": 0,
+    "disconnect_seconds": 5,
+    "output": "artifacts/test-output/phase5-client-pool-check"
+  },
+  "elapsed_workload_s": 7.246723300020676,
+  "generator_process_cpu_s": 5.015625,
+  "planned_unique_events": 3500,
+  "attempted_event_deliveries": 4000,
+  "unique_events_attempted": 3500,
+  "unique_events_accepted": 3500,
+  "failed_request_event_deliveries": 0,
+  "http_rejected_event_deliveries": 0,
+  "timeouts": 0,
+  "http_status_counts": {
+    "200": 800
+  },
+  "http_failure_count": 0,
+  "measurement_window_s": 5,
+  "measurement_window_unique_events": 2445,
+  "measurement_window_events_per_s": 489.0,
+  "measurement_window_http_requests_per_s": 113.8,
+  "measurement_primary_cohort_events": 2500,
+  "measurement_primary_cohort_latency": {
+    "p50_ms": 49.57554998691194,
+    "p95_ms": 155.74980999226682,
+    "p99_ms": 181.7598789575276
+  },
+  "measurement_all_request_latency": {
+    "p50_ms": 56.21249997057021,
+    "p95_ms": 163.62150996574198,
+    "p99_ms": 189.98312302574047
+  },
+  "controlled_retry_requests": 100,
+  "controlled_retry_latency": {
+    "p50_ms": 93.48679997492582,
+    "p95_ms": 180.3036700148368,
+    "p99_ms": 191.79344999080058
+  },
+  "primary_schedule_lateness": {
+    "p50_ms": -2.6293999946211954,
+    "p95_ms": 38.4966649981219,
+    "p99_ms": 54.45744103013978
+  },
+  "last_primary_completion_s": 7.111937400011811,
+  "protocol_errors": [],
+  "database_audit_passed": true,
+  "sse": {
+    "subscribers": 0,
+    "passed": true,
+    "cursors": [],
+    "errors": [],
+    "connections": [],
+    "disconnect": null
+  },
+  "resource_samples": 3,
+  "gates": {
+    "all_planned_events_acknowledged": true,
+    "no_http_failures": true,
+    "no_pacing_or_receipt_errors": true,
+    "throughput_at_least_99_percent_target": false,
+    "primary_p95_below_batch_interval": true,
+    "primary_p99_below_1s": true,
+    "postgres_audit": true,
+    "sse_replay": true
+  },
+  "passed": false
+}
