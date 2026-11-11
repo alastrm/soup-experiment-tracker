@@ -16,7 +16,7 @@ from playwright.async_api import async_playwright, expect
 API = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
 WEB = os.getenv("WEB_BASE_URL", "http://localhost:3000")
 DSN = os.getenv("DATABASE_URL", "postgresql://soup:soup_local_only@127.0.0.1:54329/soup").replace("postgresql+asyncpg://","postgresql://")
-ARTIFACTS = Path("artifacts/screenshots")
+ARTIFACTS = Path(os.getenv("SCREENSHOT_DIR", "artifacts/screenshots"))
 
 
 def event(step, value=None, metric="loss"):

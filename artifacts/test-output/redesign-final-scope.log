@@ -1,0 +1,4 @@
+PASS: no changes to backend/docs/contracts/dependencies or tracked historical artifacts
+PASS: 11 new raw logs; token-shaped values=0
+Frontend checks: client5; TypeScript/build exit0; E2E10 passed; final presentation1 passed
+EXIT_CODE=0

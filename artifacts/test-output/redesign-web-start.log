@@ -1,0 +1,7 @@
+ Container soup-task-web-1  Recreate
+ Container soup-task-web-1  Recreated
+ Container soup-task-web-1  Starting
+ Container soup-task-web-1  Started
+ Container soup-task-web-1  Waiting
+ Container soup-task-web-1  Healthy
+EXIT_CODE=0

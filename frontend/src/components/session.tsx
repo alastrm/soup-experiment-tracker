@@ -29,7 +29,7 @@ function AccessForm() {
     } catch (e) {setError(e instanceof Error ? e.message : "Connection failed.");}
     finally {setBusy(false);}
   }
-  return <div className="access panel"><div className="eyebrow">PROJECT ACCESS</div><h1>Track what actually happened.</h1>
+  return <div className="access panel"><div className="eyebrow">Project access</div><h1>Connect your project.</h1>
     <p className="muted">Connect a project to inspect runs and follow committed metrics live.</p>
     <form onSubmit={e => {e.preventDefault(); void connect(false);}} className="mt-7 grid gap-4">
       <label>Project label <span className="muted">(optional)</span><input aria-label="Project label" value={name} maxLength={100} onChange={e=>setName(e.target.value)} placeholder="Research workspace" /></label>
@@ -44,10 +44,10 @@ function AccessForm() {
 export function Shell({children}: {children: ReactNode}) {
   const session = useSession();
   const router = useRouter();
-  return <div className="app-shell"><aside className="sidebar"><Link className="brand" href="/"><span className="brand-mark">s</span>soup<span className="brand-sub">TRACKER</span></Link>
-    <div className="sidebar-label">WORKSPACE</div><div className="project-label"><span className="project-avatar">P</span><div><strong>{session.label || "No project connected"}</strong><small>Project-scoped workspace</small></div></div>
-    <Link href="/" className="nav-active"><span>▤</span> Experiment runs</Link>
-    <div className="sidebar-bottom"><span className="tiny-dot"/> PostgreSQL-backed tracking<p>Committed events. Recoverable history.</p>{session.key && <button className="secondary mt-4 w-full" onClick={()=>{session.clear();router.push("/");}}>Switch project / key</button>}</div></aside>
-    <div className="workspace"><header className="topbar"><span>Workspace <span className="muted">/</span> Experiments</span><span className="badge">LOCAL WORKSPACE</span></header>
-      <main>{session.key ? <div key={session.generation}>{children}</div> : <AccessForm/>}</main><footer>SOUP EXPERIMENT TRACKER <span>Durable metrics · explicit recovery</span></footer></div></div>;
+  return <div className="app-shell"><aside className="sidebar"><Link className="brand" href="/">soup<span className="brand-sub">tracker</span></Link>
+    <div className="project-label"><small>Project</small><strong>{session.label || "No project connected"}</strong></div>
+    <Link href="/" className="nav-active"><span aria-hidden="true">↗</span> Experiment runs</Link>
+    <div className="sidebar-bottom"><span>Local workspace</span>{session.key && <button className="secondary" onClick={()=>{session.clear();router.push("/");}}>Switch project / key</button>}</div></aside>
+    <div className="workspace"><header className="topbar"><span>Experiment tracking</span><span>Local session</span></header>
+      <main>{session.key ? <div key={session.generation}>{children}</div> : <AccessForm/>}</main><footer>Soup / Experiment tracker <span>Keys stay in memory</span></footer></div></div>;
 }

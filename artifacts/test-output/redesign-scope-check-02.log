@@ -1,0 +1,9 @@
+PASS: SSE/auth/reconnect effect and demo submission logic unchanged before JSX rendering
+PASS: backend, docs, API/state contracts unchanged
+frontend/src/app/globals.css
+frontend/src/components/chart.tsx
+frontend/src/components/run-detail.tsx
+frontend/src/components/run-list.tsx
+frontend/src/components/session.tsx
+
+EXIT_CODE=0
